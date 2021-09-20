@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22 Jun 2021, 12:06:02 PM
+    Author     : LeopoldR
+*/
+
+
+.verification_comment {
+    display: inline-block;
+    padding-bottom: 15px;
+    vertical-align: top;
+    width: 100%;
+}
+.verification_comment p {
+    background: var(--primary) none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff !important;
+    font-size: 12px;
+    margin: 0;
+    padding: 10px 10px 0px 12px;
+    width: 100%;
+    line-height: 14px;
+}
+
+.verification_comment p:after {
+    content: "";
+    position: relative;
+    bottom: -10px;
+    left: 10px;
+    border-width: 10px 0 0 10px;
+    border-style: solid;
+    border-color: var(--primary) transparent;
+    display: block;
+    width: 0;
+} 
+.verification_comment .time_date {
+    color: #2c2c2c;
+    display: block;
+    font-size: 11px;
+    padding-left: 10%;
+}
+.it_comment .time_date {
+    float: right;
+    color: #2c2c2c;
+    display: block;
+    font-size: 11px; 
+    padding-right: 10%;
+}
+.comment_box { 
+    width: 50%;
+    float: inherit;
+}
+
+.comments {
+    float: left;
+    padding: 30px 0px;
+    width: 100%;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.it_comment p {
+    background: rgba(0, 0, 0, 0.05) none repeat scroll 0 0;
+    border-radius: 3px;
+    font-size: 12px;
+    margin: 0; 
+    color: #2c2c2c !important;
+    padding: 10px 10px 0px 12px;
+    width: 100%;
+    line-height: 14px;
+}
+.it_comment p:after {
+    content: "";
+    position: relative;
+    bottom: -10px;
+    left: 95%;
+    border-width: 10px 0 0 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.05) transparent;
+    display: block;
+    width: 0;
+    transform: rotate(270deg);
+}  
+.it_comment {
+    float: right;
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 15px;
+    vertical-align: top;
+}
+

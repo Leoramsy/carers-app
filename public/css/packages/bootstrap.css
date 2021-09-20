@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02-Apr-2018, 14:50:09
+    Author     : Zak
+*/
+
+
+.modal-header {
+    background-color: var(--secondary);
+    color: #fff;
+    font-family: 'LatoWeb', sans-serif;
+    font-size: 20px;
+}
+
+.modal-content .modal-header .modal-title {
+    font-family: "Poppins", sans-serif;
+    color: #fff !important;
+    font-size: 0.9em;
+}
+
+.modal-footer {
+    border-top: 1px solid #2a4474;
+    background-color: #fff;
+    padding: 0px 15px 15px 15px;
+    -webkit-justify-content: flex-end !important;
+    justify-content: flex-end !important;
+}
+
+.btn {
+    padding: 10px 12.5px;
+}
+
+.btn.dropdown-toggle:after, 
+.navbar .navbar-nav>a.btn.dropdown-toggle:after {
+    margin-left: 10px !important;
+}
+
+.btn.dropdown-toggle[data-toggle="dropdown"] {
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.modal-footer button.btn {
+    background-image: none;
+    background-color: var(--secondary);
+    color: #fff;
+    text-shadow: none;
+}
+
+.modal-footer button.btn:hover {
+    background-image: none;
+    color: #fff;
+    background-color: var(--primary);
+}
+
+.row.odd-row {
+    background-color: rgba(34, 42, 66, 0.05);
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+
+/*
+DATE PICKER PAGE
+*/
+
+.input-group.date > .form-control:not(:last-child), 
+.input-group.date > .custom-select:not(:last-child) {
+    border-radius: 0.4285rem;
+    border: 1px solid rgba(29, 37, 59, 0.5);;
+}
+
+.dropdown-menu .dropdown-item, 
+.bootstrap-select .dropdown-menu.inner li a {
+    font-size: 14px;
+    color: #434a54;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+/*
+
+*/
+
+.card-body-scroll {
+    height: 55vh; 
+    overflow-y: scroll;
+}

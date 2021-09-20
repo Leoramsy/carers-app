@@ -1,0 +1,23 @@
+div.quill-wrapper {
+    min-height: 6em;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+div.quill-wrapper div.toolbar {
+    border-bottom: 1px solid #ccc;
+}
+
+div.DTE_Field_Type_quill {
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+div.DTE_Field_Type_quill div.DTE_Field_InputControl {
+    height: 100%;
+}
+
+div.DTE_Field_Type_quill div.DTE_Field_InputControl .quill-wrapper {
+    height: 100%;
+}

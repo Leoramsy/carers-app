@@ -1,0 +1,28 @@
+/*
+    SELECT 2
+*/
+
+div.DTE_Field_Type_select2 .select2 {
+    width: 100% !important;
+}
+
+div.DTE > div.DTE_Body div.DTE_Field_InputControl span.select2-selection {
+    min-height: 34px;
+    padding: 6px 12px;
+    border-radius: 0px;
+}
+
+.DTE_Field .select2-container .select2-selection--single .select2-selection__rendered,
+.DTE_Field .select2-container--bootstrap .select2-selection--single .select2-selection__rendered {
+
+}
+
+div.DTE > div.DTE_Body div.DTE_Field_InputControl span.select2-selection > span.select2-selection__rendered {
+    line-height: inherit;
+    padding-left: 0px;
+    color: #444;
+}
+
+div.DTE > div.DTE_Body div.DTE_Field_InputControl span.select2-selection > span.select2-selection__arrow {
+    height: 34px;
+}

@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 29, 2020, 12:35:10 PM
+    Author     : ZakS
+*/
+
+.bootstrap-switch {
+    background: linear-gradient(0deg, var(--secondary) 10%, var(--primary) 100%);
+}
+
+/*
+.bootstrap-switch .bootstrap-switch-label {
+    top: 6px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on, 
+.bootstrap-switch .bootstrap-switch-handle-off, 
+.bootstrap-switch .bootstrap-switch-label {
+    padding: 10px 10px;
+}
+*/

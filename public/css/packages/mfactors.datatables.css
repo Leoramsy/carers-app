@@ -1,0 +1,506 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04 Oct 2018, 3:42:42 PM
+    Author     : Zak
+*/
+
+.table > tbody > tr > td.selector {
+    width: 4%;
+    text-align: center;
+}
+
+.child-table-container {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+table.child-table {
+    margin-bottom: 0px;
+    border: 1px solid #07237d;
+}
+
+.table>tbody>tr.danger>td, .table>tbody>tr.danger>th, .table>tbody>tr>td.danger, .table>tbody>tr>th.danger, .table>tfoot>tr.danger>td, .table>tfoot>tr.danger>th, .table>tfoot>tr>td.danger, .table>tfoot>tr>th.danger, .table>thead>tr.danger>td, .table>thead>tr.danger>th, .table>thead>tr>td.danger, .table>thead>tr>th.danger {
+    background-color: #f2dede !important;
+}
+
+.table>tbody>tr.warning>td, .table>tbody>tr.warning>th, .table>tbody>tr>td.warning, .table>tbody>tr>th.warning, .table>tfoot>tr.warning>td, .table>tfoot>tr.warning>th, .table>tfoot>tr>td.warning, .table>tfoot>tr>th.warning, .table>thead>tr.warning>td, .table>thead>tr.warning>th, .table>thead>tr>td.warning, .table>thead>tr>th.warning {
+    background-color: #fcf8e3 !important;
+}
+
+.table>tbody>tr.info>td, .table>tbody>tr.info>th, .table>tbody>tr>td.info, .table>tbody>tr>th.info, .table>tfoot>tr.info>td, .table>tfoot>tr.info>th, .table>tfoot>tr>td.info, .table>tfoot>tr>th.info, .table>thead>tr.info>td, .table>thead>tr.info>th, .table>thead>tr>td.info, .table>thead>tr>th.info {
+    background-color: #d1ecf1 !important;
+}
+
+.table>tbody>tr.success>td, .table>tbody>tr.success>th, .table>tbody>tr>td.success, .table>tbody>tr>th.success, .table>tfoot>tr.success>td, .table>tfoot>tr.success>th, .table>tfoot>tr>td.success, .table>tfoot>tr>th.success, .table>thead>tr.success>td, .table>thead>tr.success>th, .table>thead>tr>td.success, .table>thead>tr>th.success {
+    background-color: #d4edda !important;
+}
+
+.table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active {
+    background-color: #004085 !important;
+    color: #fff;
+}
+
+.child-table > thead {
+    background-color: #07237d;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.table tr.total_footer {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.table tfoot > tr.total_footer > td,
+.table tfoot > tr.total_footer > th {
+    border-top: 1px solid black; 
+}
+
+.table-striped tfoot.report-footer-striped tr.odd-row {
+    background-color: rgba(34, 42, 66, 0.05);
+}
+
+table.table.report-table tr > th,
+table.table.report-table tr > td{
+    font-size: 12px;
+}
+
+.main-content table.table tr > th,
+.main-content table.table tr > td{
+    font-size: 12px;
+}
+
+.table.report-table > thead th {
+    text-transform: unset;
+}
+
+.main-content table.table > thead th {
+    text-transform: unset;
+}
+
+.main-content .table.report-table>thead>tr>th, 
+.main-content .table.report-table>tbody>tr>th, 
+.main-content .table.report-table>tfoot>tr>th, 
+.main-content .table.report-table>thead>tr>td, 
+.main-content .table.report-table>tbody>tr>td, 
+.main-content .table.report-table>tfoot>tr>td {
+    padding: 6px 3.5px;
+    font-size: 14px;
+}
+
+.main-content .table>thead>tr>th, 
+.main-content .table>tbody>tr>th, 
+.main-content .table>tfoot>tr>th, 
+.main-content .table>thead>tr>td, 
+.main-content .table>tbody>tr>td, 
+.main-content .table>tfoot>tr>td {
+    padding: 6px 3.5px;
+    font-size: 14px;
+}
+
+.main-content .table>thead>tr>td, 
+.main-content .table>tbody>tr>td, 
+.main-content .table>tfoot>tr>td {
+    color: #2c2c2c;
+}
+
+.main-content .table.report-table>thead>tr>td,
+.main-content .table.report-table>thead>tr>th {
+    border-color: transparent;
+}
+
+
+.table tr.total_footer:last-child > td.column_sum, 
+.table tr.total_footer:last-child > th.column_sum {
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black;
+}
+
+.table tr.total_footer > td.column_sum_bottom, 
+.table tr.total_footer > th.column_sum_bottom {
+    color: black; 
+    border-bottom: 2px solid black;
+}
+
+.table tr.total_footer > td.column_sum, 
+.table tr.total_footer > th.column_sum {
+    color: black; 
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.table tr.total_footer > td.column_sum_top, 
+.table tr.total_footer > th.column_sum_top {
+    color: black; 
+    border-color: black;
+    border-top: 2px solid black !important;
+}
+
+.table tr.total_footer > td.column_sum_bottom, 
+.table tr.total_footer > th.column_sum_bottom {
+    color: black;
+    border-color: black;
+    border-bottom: 2px solid black !important;
+}
+
+.dt-cell-left {
+    text-align: left;
+}
+
+.dt-cell-center {
+    text-align: center;
+}
+
+.dt-cell-right {
+    text-align: right;
+}
+
+table.dataTable tbody th.dt-body-left,
+table.dataTable tbody td.dt-body-left {
+    text-align: left;
+}
+table.dataTable tbody th.dt-body-center,
+table.dataTable tbody td.dt-body-center {
+    text-align: center;
+}
+table.dataTable tbody th.dt-body-right,
+table.dataTable tbody td.dt-body-right {
+    text-align: right;
+}
+
+table.table.dataTable > thead > tr > th {
+    font-family: 'LatoWeb', sans-serif; /* Arial backup font? */
+    color: #000; /* color: #07237d; */
+    font-weight: 700;
+}
+
+table.child-table.dataTable > thead > tr > th {
+    color: #fff;
+}
+
+table.table.dataTable > tfoot > tr > th {
+    font-family: 'LatoWeb', sans-serif; /* Arial backup font? */
+    color: #000; /* color: #07237d; */
+    font-weight: 700;
+    text-transform: none;
+}
+
+table.dataTable thead tr th.headerLeft {
+    text-align: left;
+    /* padding-left: 10px; */
+}
+
+table.dataTable thead tr th.headerRight {
+    text-align: right;
+    /* padding-right: 18px; */
+}
+
+table.dataTable thead tr th.headerCentert {
+    text-align: center;
+}
+
+#content table.dataTable > thead > tr > th:first-child {    
+    width: 4%;
+}
+
+table.dataTable thead tr td,
+table.dataTable tbody tr td {
+    font-family: 'LatoWeb', sans-serif;
+    padding: 2px 10px;
+}
+
+table.dataTable.table-striped tbody > tr.odd.selected, 
+table.dataTable.table-striped tbody > tr.odd > .selected, 
+table.dataTable.display tbody > tr.odd.selected, 
+table.dataTable.display tbody > tr.odd > .selected,
+table.dataTable.table-striped tbody > tr.even.selected, 
+table.dataTable.table-striped tbody > tr.even > .selected, 
+table.dataTable.display tbody > tr.even.selected, 
+table.dataTable.display tbody > tr.even > .selected {
+    background-color: #577abc;
+    color: white;
+}
+
+table.dataTable.table-striped tbody > tr.selected td, 
+table.dataTable.table-striped tbody > tr > .selected td,  
+table.dataTable.display tbody > tr.selected td,  
+table.dataTable.display tbody > tr > .selected td{
+    color: white !important;
+}
+
+table.dataTable.display tbody > tr.odd.selected > .sorting_1, 
+table.dataTable.order-column.table-striped tbody>tr.odd.selected > .sorting_1 {
+    background-color: #577abc;
+    color: white;
+}
+
+table.dataTable.display tbody>tr.even.selected > .sorting_1, 
+table.dataTable.order-column.table-striped tbody > tr.even.selected > .sorting_1 {
+    background-color: #577abc;
+    color: white;
+}
+
+#content table.dataTable tr td.dt-body-center:first-child:before 
+{ 
+    font-family: FontAwesome; 
+    content: "\f096"; /* fa-square-o */ 
+}
+
+#content table.dataTable tr.selected td.dt-body-center:first-child:before 
+{ 
+    font-family: FontAwesome; 
+    content: "\f046"; /* fa-check-square-o */ 
+}
+
+div.dataTables_wrapper {
+    color: #07237d;
+}
+
+.btn-default{
+    width: auto;
+    background-color: #fff; 
+    border-color: #07237d; 
+    color: #07237d; 
+    border-radius: 4px !important; 
+    margin-right: 5px;
+} /* margin: 0px 0px 0px 10px !important */
+
+.btn-default.focus,
+.btn-default:focus,
+.btn-default.active,
+.btn-default:active,
+.btn-default.active.focus, 
+.btn-default.active:focus,
+.btn-default:active.focus, 
+.btn-default:active:focus {
+    background-color: initial;
+    border-color: initial;
+    color: #07237d; 
+}
+
+.btn-default:hover, 
+.btn-default.focus:hover,
+.btn-default:focus:hover,
+.btn-default:active:hover, 
+.btn-default.active:hover,
+.btn-default.active.focus:hover,
+.btn-default.active:focus:hover,
+.btn-default:active.focus:hover,
+.btn-default:active:focus:hover {
+    background-color: #07237d;
+    border-color: #07237d;
+    color: #fff;
+}
+
+/*
+.btn-default.active.focus, 
+.btn-default.active:focus, 
+.btn-default.active:hover, 
+.btn-default:active.focus, 
+.btn-default:active:focus, 
+.btn-default:active:hover, 
+.open > .dropdown-toggle.btn-default.focus, 
+.open > .dropdown-toggle.btn-default:focus, 
+.open > .dropdown-toggle.btn-default:hover {
+    background-color: #07237d;
+    border-color: #07237d;
+    color: #fff;
+}
+*/
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    float: right;
+    display: inline-block;
+    width: auto;
+}
+
+div.dataTables_wrapper div.dataTables_filter > label {
+    font-size: 14px;
+}
+
+div.dataTables_wrapper div.dataTables_filter label > i {
+    margin-left: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.datatable_div {
+    margin-top:15px;
+}
+
+.dataTables_paginate > .pagination > li.page-item > a.page-link, 
+.dataTables_paginate > .pagination > li.page-item > span {  
+    color: #07237d;
+    height: 36px;
+    margin: 0px;
+    line-height: 1.42857143;
+    padding: 6px 12px;
+    margin-left: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0px !important;
+}
+
+.dataTables_paginate > .pagination > li.page-item.previous > a.page-link:hover,
+.dataTables_paginate > .pagination > li.page-item.previous > span:hover,
+.dataTables_paginate > .pagination > li.page-item.next > a.page-link:hover,
+.dataTables_paginate > .pagination > li.page-item.next > span:hover,
+.dataTables_paginate > .pagination > li.page-item > a.page-link:hover,
+.dataTables_paginate > .pagination > li.page-item > span:hover {
+    color: #07237d !important;
+}
+
+.dataTables_paginate > .pagination > li.page-item.active > a.page-link, 
+.dataTables_paginate > .pagination > li.page-item.active > a.page-link:focus,  
+.dataTables_paginate > .pagination > li.page-item.active > span, 
+.dataTables_paginate > .pagination > li.page-item.active > span:focus {
+    opacity: 1;
+    color: #fff !important;
+    background-color: #07237d;
+    background: #07237d;
+    border-color: #07237d;
+    border-radius: 0px !important;
+}
+
+.dataTables_paginate > .pagination > li.page-item.previous > a.page-link, 
+.dataTables_paginate > .pagination > li.page-item.previous > span {
+    color: #fff !important;
+    background-color: #07237d;
+    border: 1px solid #07237d;
+    margin-left: 0;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.dataTables_paginate > .pagination > li.page-item.next > a.page-link, 
+.dataTables_paginate > .pagination > li.page-item.next > span {
+    color: #fff !important;
+    background-color: #07237d;
+    border: 1px solid #07237d;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+table.dataTable th {
+    color: #07237d;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 5px;
+}     
+
+table.dataTable thead {    
+    border: 1px #07237d solid;
+}
+
+table.dataTable {    
+    border-collapse:collapse;
+    margin-top:15px !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table.dataTable.report-table {    
+    border-radius: 0px;
+}
+
+table.dataTable:not(table.report-table){
+    border: 1px #07237d solid;
+}
+
+table.dataTable thead .sorting:before, 
+table.dataTable thead .sorting_asc:before, 
+table.dataTable thead .sorting_desc:before, 
+table.dataTable thead .sorting_asc_disabled:before, 
+table.dataTable thead .sorting_desc_disabled:before {
+    content: none;
+}
+
+table.dataTable thead .sorting:after, 
+table.dataTable thead .sorting_asc:after, 
+table.dataTable thead .sorting_desc:after, 
+table.dataTable thead .sorting_asc_disabled:after, 
+table.dataTable thead .sorting_desc_disabled:after {
+    font-family: FontAwesome;
+    opacity: 1;
+}
+
+table.dataTable.table-sm .sorting:after, 
+table.dataTable.table-sm .sorting_asc:after, 
+table.dataTable.table-sm .sorting_desc:after {
+    top: 5px;
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\f161";
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\f160";
+}
+
+.modal-open .modal {
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    overflow: hidden;
+}
+
+div.dataTables_wrapper div.dataTables_processing {
+    /* margin-left: 0px; */
+    text-align: center;
+    background-color: #5e83c7 !important;
+    border-radius: 0px;
+    color: white !important;
+}
+table.dataTable tr td.table-icon {
+    cursor: pointer;
+}
+
+table.dataTable tr td.arrow-expand:before {
+    font-family: FontAwesome;
+    content: "\f149"; /* fa-level-down */ 
+    font-size: medium;
+}
+
+table.dataTable tr td.comments:before {
+    font-family: FontAwesome;
+    content: "\f27a"; /* fa-comment-dots */ 
+    font-size: medium;
+}
+
+table.dataTable tr td.arrow-collapse:before {
+    font-family: FontAwesome;
+    content: "\f148"; /* fa-level-up */ 
+    font-size: medium;
+}
+
+table.dataTable tr td.refresh:before {
+    font-family: FontAwesome;
+    content: "\f021"; /* fa-refresh */ 
+    font-size: medium;
+}
+.report-card .table > thead > tr > th {
+    text-transform: unset;
+}
+
+.dte-full-width-no-label > label {
+    display: none;
+}
+
+.dte-full-width-no-label > div {
+    width: 100%;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+.dte-full-width-no-label textarea.form-control {
+    height: 180px;
+}

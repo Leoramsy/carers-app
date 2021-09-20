@@ -1,0 +1,41 @@
+
+.modal-dialog {
+    position: relative;   
+    width: 650px;
+    max-width: 650px;
+    margin: 30px auto;
+}
+
+.modal-header .close {
+    margin-top: -2px;
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal.show .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+div.DTE_Field div:not([data-dte-e="msg-error"]) {
+    color: #6c757d !important;
+}

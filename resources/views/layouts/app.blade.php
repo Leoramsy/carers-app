@@ -1,83 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Carers') }}</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="{{ asset('images') }}/favicon.ico">
+        <!-- Fonts -->     
+        <!-- Icons -->
+        @include('partials.styles')
+    </head>
+    <body class="main-content">
+        <div class="wrapper">
+            @include('layouts.navbars.navbar')
+            @include('layouts.navbars.sidebar')
+            <div class="main-panel">                
+                <div class="content">
+                    @yield('content')
+                    @include('layouts.footer')
+                </div>                        
+            </div>            
+            @include('partials.scripts')
+            @include('partials/modals')
+            @include('flash::message')
+            @stack('js')
+            <script>
+                $(document).ready(function () {
+                    $().ready(function () {
+                        $sidebar = $('.sidebar');
+                        $navbar = $('.navbar');
+                        $main_panel = $('.main-panel');
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+                        $full_page = $('.full-page');
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+                        $sidebar_responsive = $('body > .navbar-collapse');
+                        sidebar_mini_active = false;
+                        white_color = false;
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                        window_width = $(window).width();
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-                    </ul>
+                        $('.fixed-plugin a').click(function (event) {
+                            if ($(this).hasClass('switch-trigger')) {
+                                if (event.stopPropagation) {
+                                    event.stopPropagation();
+                                } else if (window.event) {
+                                    window.event.cancelBubble = true;
+                                }
+                            }
+                        });
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function () {
+                            var $btn = $(this);
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                            if (sidebar_mini_active == true) {
+                                $('body').removeClass('sidebar-mini');
+                                sidebar_mini_active = false;
+                                whiteDashboard.showSidebarMessage('Sidebar mini deactivated...');
+                            } else {
+                                $('body').addClass('sidebar-mini');
+                                sidebar_mini_active = true;
+                                whiteDashboard.showSidebarMessage('Sidebar mini activated...');
+                            }
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                            // we simulate the window Resize so the charts will get updated in realtime.
+                            var simulateWindowResize = setInterval(function () {
+                                window.dispatchEvent(new Event('resize'));
+                            }, 180);
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
+                            // we stop the simulation of Window Resize after the animations are completed
+                            setTimeout(function () {
+                                clearInterval(simulateWindowResize);
+                            }, 1000);
+                        });
+
+                    });
+                });
+            </script>
+            @stack('js')
+        </div>               
+    </body>
 </html>

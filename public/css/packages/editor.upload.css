@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13 Oct 2018, 12:14:17 PM
+    Author     : Zak
+*/
+
+div.rendered.flipster {
+    width: 275px;
+    overflow-x: visible;
+}
+
+div.DTE div.editor_upload.multi ul li button {
+    position: absolute;
+    width: 40px;
+    right: 0;
+    bottom: 0;
+    top: unset;
+    margin-top: -1.5em;
+}
+
+div.DTE div.editor_upload.multi ul li div.file-detail-container {
+    display: block;
+    margin-top: 1em;
+}
+
+div.rendered.flipster li.flipster__item.flipster__item--current {
+    background-color: white;
+}
+
+div.rendered.flipster li.flipster__item:not(.flipster__item--current) .file-detail-container > button {
+    display: none;
+}
+
+.flipster__button {
+    margin: -1em 0em;
+}

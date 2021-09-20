@@ -1,0 +1,639 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 25, 2020, 10:48:30 AM
+    Author     : ZakS
+*/
+
+@page{
+    size: A4;
+}
+
+* {
+    font-family: 'Arial', sans-serif !important;
+}
+
+body {
+    height: 100%;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif !important;
+}
+
+table {
+    height: 100%;
+}
+
+.a4,
+.portrait, 
+.a4.portrait {
+    width: 248.5mm; /* 210mm */
+    font-size: 13px;
+}
+
+.portrait .report-wrapper {
+    width: 247.5mm; /* 209mm */
+    clear: left;
+    padding-left: 2px;
+}
+
+.portrait .report-table {
+    width: 247.5mm; /* 209mm */
+}
+
+.portrait,
+.portrait .page,
+.a4.portrait .page{
+    height: 330mm; /* 298mm */
+}
+
+.portrait .report-row > .report-cell.col-12 {
+    width: 247.5mm;
+}
+
+.portrait .report-row > .report-cell.col-11 {
+    width: 226.93mm;
+}
+
+.portrait .report-row > .report-cell.col-10 {
+    width: 206.3mm;
+}
+
+.portrait .report-row > .report-cell.col-9 {
+    width: 185.67mm;
+}
+
+.portrait .report-row > .report-cell.col-8 {
+    width: 165.04mm ;
+}
+
+.portrait .report-row > .report-cell.col-7 {
+    width: 144.41mm;
+}
+
+.portrait .report-row > .report-cell.col-6 {
+    width: 123.78mm;
+}
+
+.portrait .report-row > .report-cell.col-5 {
+    width: 103.15mm;
+}
+
+.portrait .report-row > .report-cell.col-4 {
+    width: 82.52mm;
+}
+
+.portrait .report-row > .report-cell.col-3 {
+    width: 61.89mm;
+}
+
+.portrait .report-row > .report-cell.col-2 {
+    width: 41.26mm;
+}
+
+.portrait .report-row > .report-cell.col-1 {
+    width: 20.63mm;
+}
+
+.landscape,
+.a4.landscape {
+    width: 360mm;
+    font-size: 13px;
+}
+
+.landscape .page,
+.a4.landscape .page{
+    height: 222mm;
+}
+
+.landscape .report-wrapper {
+    width: 358mm;
+    clear: left;
+    padding-left: 2px;
+}
+
+.landscape .report-table {
+    width: 358mm;
+}
+
+.landscape .report-row {
+    display: block;
+    width: 358mm;
+}
+
+.landscape .report-row > .report-cell.col-12 {
+    width: 358mm;
+}
+
+.landscape .report-row > .report-cell.col-11 {
+    width: 328.13mm;
+}
+
+.landscape .report-row > .report-cell.col-10 {
+    width: 298.3mm;
+}
+
+.landscape .report-row > .report-cell.col-9 {
+    width: 268.47mm;
+}
+
+.landscape .report-row > .report-cell.col-8 {
+    width: 238.64mm ;
+}
+
+.landscape .report-row > .report-cell.col-7 {
+    width: 208.81mm;
+}
+
+.landscape .report-row > .report-cell.col-6 {
+    width: 179mm;
+}
+
+.landscape .report-row > .report-cell.col-5 {
+    width: 149.15mm;
+}
+
+.landscape .report-row > .report-cell.col-4 {
+    width: 119.32mm;
+}
+
+.landscape .report-row > .report-cell.col-3 {
+    width: 89.5mm;
+}
+
+.landscape .report-row > .report-cell.col-2 {
+    width: 59.66mm;
+}
+
+.landscape .report-row > .report-cell.col-1-three-quarter {
+    width: 52.25mm;
+}
+
+.landscape .report-row > .report-cell.col-1-half {
+    width: 44.75mm;
+}
+
+.landscape .report-row > .report-cell.col-1 {
+    width: 29.83mm;
+}
+
+.landscape .report-row > .report-cell.col-half {
+    width: 14.92mm;
+}
+
+.report-row {
+    height: 7mm;
+    font-size: 12px;
+    vertical-align: text-bottom;
+    /*
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    */
+}
+
+table.table-grid {
+    border-collapse: collapse;
+    border: 1px solid #FF0000;
+}
+
+table.table-grid td {
+    border:1px solid #FF0000;
+}
+
+.report-row.report-row-sm {
+    font-size: 10px;
+}
+
+.report-row.report-row-md {
+    font-size: 12px;
+}
+
+.report-row.report-row-lg {
+    font-size: 14px;
+}
+
+.report-row.report-row-xl {
+    font-size: 16px;
+}
+
+.report-cell-header {
+    font-size: 13px;
+}
+
+.report-cell-footer {
+    font-size: 12px;
+}
+
+.report-row.report-row-double {
+    height: 14mm;
+}
+
+.report-container.report-container-spacer-top {
+    margin-top: 2mm !important;
+}
+
+.report-container.report-container-spacer-bottom {
+    margin-bottom: 2mm !important;
+}
+
+.report-data > .report-row.report-row-header > .report-cell-header {
+    border-top: none;
+}
+
+.report-row-spacer {
+    height: 2mm;
+}
+
+.report-row-spacer-top {
+    margin-top: 2.5mm;
+}
+
+.report-row-spacer-top-double {
+    margin-top: 5mm;
+}
+
+.report-row-spacer-bottom {
+    margin-bottom: 2.5mm;
+}
+
+.report-cell-header {
+    font-weight: bold;
+}
+
+.page.page-test .report-cell,
+.page.page-test .report-cell-double {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.report-cell {
+    float: left;
+    height: 7mm;
+    padding: 0.25rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.report-cell-lg {
+    font-size: 14px !important;
+}
+
+.report-row-spacer > .report-cell {
+    height: 2mm;
+}
+
+.report-cell.report-cell-spacer {
+    height: 2mm;
+}
+
+.report-cell.report-cell-blank {
+    border-top: none;
+}
+
+.report-cell.report-cell-boarder {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.report-row.report-row-double > .report-cell.report-cell-double {
+    height: 14mm;
+}
+
+.report-row-header > .report-cell {
+    border-color: transparent;
+}
+
+.report-row.odd-row {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.report-cell-total {
+    border-top: 1px solid black !important; 
+    border-bottom: 1px solid black !important;
+}
+
+.report-cell-total.report-cell-blank {
+    border-top: none !important; 
+    border-bottom: 1px solid black !important;
+}
+
+.report-cell-total-top {
+    border-top: 1px solid black !important; 
+}
+
+.report-cell-boarder-dash-top {
+    border-top: 1px dashed black !important; 
+}
+
+.report-cell-boarder-dash-right {
+    border-right: 1px dashed black !important; 
+}
+
+.report-cell-boarder-dash-bottom {
+    border-bottom: 1px dashed black !important; 
+}
+
+.report-cell-boarder-dash-left {
+    border-left: 1px dashed black !important; 
+}
+
+
+.report-cell-total-bottom {
+    border-bottom: 1px solid black !important;
+}
+
+.report-row-footer .report-cell-total {
+    border-bottom: none !important;
+}
+
+.report-footer > .report-row-footer {
+    position: absolute;
+}
+
+.report-footer > .report-row-footer:nth-last-child(20) {
+    bottom: 143mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(19) {
+    bottom: 136mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(18) {
+    bottom: 129mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(17) {
+    bottom: 122mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(17) {
+    bottom: 115mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(16) {
+    bottom: 108mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(15) {
+    bottom: 101mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(14) {
+    bottom: 94mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(13) {
+    bottom: 87mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(12) {
+    bottom: 80mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(11) {
+    bottom: 73mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(10) {
+    bottom: 66mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(9) {
+    bottom: 59mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(8) {
+    bottom: 52mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(7) {
+    bottom: 45mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(6) {
+    bottom: 38mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(5) {
+    bottom: 31mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(4) {
+    bottom: 24mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(3) {
+    bottom: 17mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(2) {
+    bottom: 10mm;
+}
+
+.report-footer > .report-row-footer:nth-last-child(1) {
+    bottom: 3mm;
+}
+
+.report-row-footer > .report-cell {
+    /* border-bottom: 1px solid #dee2e6; */
+}
+
+.report-row-footer .report-cell-total {
+    font-weight: bold;
+}
+
+.page {
+    page-break-after: always;
+    page-break-inside: avoid;
+}
+
+
+
+
+
+.div-left{
+    padding-left: 10px;
+}
+
+
+
+.details-table{
+    width: 100%;
+    border: 0px;
+    font-size: 13px;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 10px;
+}
+
+.static-info{
+    width: 20%;
+    padding-left: 5%;
+}
+
+.dynamic-info{
+    width: 30%;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.location-info{
+    width: 80%;
+    padding-left: 20px;
+}
+
+.set-height{
+    max-height: 20px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    vertical-align:top;
+}
+
+.set-font{
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 12px;
+}
+
+.pdf-title{
+    width: 100%;
+    display: block;
+    text-align: center;    
+    padding-top: 15px;    
+    font-weight: bold;
+}
+
+.div-float{
+    float: left;
+    padding-left: 10px;
+}
+.div-alignment{
+    margin: auto;
+}
+.margin-top{
+    margin-top:18px;
+} 
+.margin-left{
+    margin-left: 400px;
+}
+.div-right{
+    padding-left: 200px;
+}
+.div-centre{
+    padding-left: 60px;
+}
+.summary{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.fixed-table{
+    border: 1px solid black;
+    table-layout: fixed;
+    height: 700px;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0 !important;
+    font-size: 13px;   
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.table th, .table td {
+    padding: 0.25rem;
+}
+
+.table thead td {
+    border-top: none;
+}
+
+.table tr.empty_row,
+.table tbody tr.empty_row,
+.table-striped tbody tr.empty_row,
+.table-striped tbody tr.empty_row:nth-of-type(odd) {
+    background-color: rgb(255 255 255) !important;
+}
+
+.table tr.empty_row th, 
+.table tr.empty_row td {
+    border-top: none; /* 0px solid #dee2e6 */
+}
+
+.table thead th {
+    border-bottom: none; /* remove as per chris request 2px solid #000000; */
+    border-top: none;
+}
+
+td {
+    padding: 0;
+}
+.th-1{
+    width: 10%;
+    table-layout: fixed;
+    text-align: center;        
+}
+.th-2{
+    width: 50%;
+    table-layout: fixed;
+    text-align: center;
+}
+.th-3{
+    width: 20%;
+    table-layout: fixed;
+    text-align: center;
+}
+.no-border{
+    border: none;
+}
+.round-corners {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.round-corners-small {
+    border-radius: 5px;
+    border: 1px solid black;
+    display: block;
+}
+.border{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.border-line{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-collapse: collapse;
+}
+td.container > div { 
+    width: 100%; 
+    height: 100%; 
+    overflow:hidden; }
+td.container { 
+    height: 20px; 
+}
+.text-center{
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+    padding-right: 5px;
+}
+.text-left{
+    text-align: left;
+    padding-left: 5px;
+}
+.max-height{
+    max-height: 10%;
+}
+
+.report-group-header {
+    border: 0.0625rem solid #e9ecef !important; 
+    border-color: #212529 !important; 
+    background-color: #f4f5f7 !important;
+    border-radius: 50rem !important;
+}

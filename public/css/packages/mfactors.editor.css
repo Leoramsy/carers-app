@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04 Oct 2018, 3:42:57 PM
+    Author     : Zak
+*/
+
+.DTE_label_left > label {
+    text-align: left;
+}
+
+.DTE_input_left input {
+    text-align: left;
+}
+
+.DTE_label_center > label {
+    text-align: center;
+}
+
+.DTE_input_center input {
+    text-align: center;
+}
+
+.DTE_label_right > label {
+    text-align: right;
+}
+
+.DTE_input_right input {
+    text-align: right;
+}
+
+.DTE_label_bold > label {
+    font-weight: bold;
+}
+
+.DTE_label_hide > label {
+    display: none;
+}
+
+.DTE_input_hide input {
+    display: none;
+}
+
+.DTE_Header_Content > h3 {
+    color: white;
+    font-family: 'LatoWeb', sans-serif;
+    font-size: 20px;
+}
+
+.DTE_Form_Content {
+    color: #07237d;
+    font-family: 'LatoWeb', sans-serif;
+}
+
+.DTE_Field_InputControl > input.hasDatepicker {
+    display: inline-block;;
+    width: 80%;
+    margin-right: 10px;
+}
+
+div.DTE_Field div:not([data-dte-e="msg-error"]) {
+    color: #6c757d !important;
+}

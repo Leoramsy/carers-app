@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04 Oct 2018, 3:42:42 PM
+    Author     : Zak
+*/
+
+.dt-btn {
+    background-image: none;
+    background-color: #344675;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.dt-btn-first {
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.dt-btn-last {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+}
+
+.dt-btn-first.dt-btn-last {
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+}
+
+.dt-btn-break {
+    margin-left: 5px !important;
+}
+
+.dt-btn.btn-secondary.disabled, 
+.dt-btn.btn-secondary:disabled {
+    color: white;
+}
+
+/*
+    BUTTON GROUP
+*/
+.dt-button-collection > .dropdown-menu {
+    background-color: #344675;
+}
+
+.dt-button-collection > .dropdown-menu:before {
+    color: #344675;
+}
+
+.dt-button-collection > .dropdown-menu > .dt-btn {
+    color: white;
+    background-image: none;
+    background-color: #344675;
+}
+
+.dt-button-collection > .dropdown-menu > .dt-btn:hover {
+    color: #212529;
+    background-color: #dee1e7;
+    border-color: #d6dae2;
+}
+
+.dt-button.dropdown-item {
+    font-size: 14px;
+    color: white;
+    background-color: #344675;
+    font-weight: 400;
+}
+
+div.dt-button-collection div.dropdown-menu {
+    margin-top: 10px;    
+    border-radius: 5px;
+}
+
+.dropdown-button:before {    
+    color: #344675 !important;    
+}
+
+

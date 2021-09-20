@@ -1,0 +1,542 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 Nov 2015, 11:51:45 AM
+    Author     : ZakS
+*/
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content {
+    padding-bottom: 2rem;    /* Footer height */
+}
+
+.wrapper span > a {
+    color: #fff;
+}
+
+div.wrapper {
+    width: 1152px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/***
+    Header
+*/
+div#header {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-color: #07237d;
+}
+
+/**
+    Top Bar
+*/
+div#header > div#top_bar {
+    width: 100%;
+    height: 45px;
+    background-color: #b3c0c7;
+}
+
+/**
+    Bottom Bar
+*/
+div#header > div#bottom_bar {
+    width: 100%;
+    height: 100px;
+    background-color: #FFF;
+}
+
+div#logo {
+    position: relative;
+    float: left;
+    font-family: 'LatoWeb', sans-serif;
+    font-size: 36px;
+    line-height: 100%;
+    margin-right: 40px;
+}
+
+/*
+    Navigation
+*/
+#primary-menu {
+    float: right;
+    height: 100px;
+}
+
+#primary-menu ul {
+    list-style: none;
+    height: 100px;
+    margin: 0;
+}
+
+#primary-menu > ul {
+    float: left;
+}
+
+#primary-menu ul li {
+    position: relative;
+    float: left;
+    margin-left: 2px;
+}
+
+#primary-menu ul ul, #primary-menu ul li .mega-menu-content {
+    display: none;
+    position: absolute;
+    width: 220px;
+    background-color: #FFF;
+    box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
+    border: 1px solid #EEE;
+    border-top: 2px solid #07237d;
+    height: auto;
+    z-index: 199;
+    top: 100px;
+    left: 0;
+    margin: 0;
+}
+
+#primary-menu ul ul li:first-child {
+    border-top: 0;
+}
+
+#primary-menu ul li:first-child {
+    margin-left: 0;
+}
+
+#primary-menu ul li {
+    position: relative;
+    float: left;
+    margin-left: 2px;
+}
+
+#primary-menu.style-3 > ul > li:hover > a {
+    color: #444;
+    background-color: #F5F5F5;
+}
+
+#primary-menu.style-3 > ul > li.sub-menu > ul {
+    display: none;
+    opacity: 0;
+    webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+#primary-menu.style-3 > ul > li.sub-menu:hover > ul {
+    display: block;
+    opacity: 1;
+}
+
+#primary-menu.style-3 > ul > li > a {
+    height: 44px;
+    line-height: 44px;
+    margin: 28px 0;
+    border-radius: 2px;
+}
+
+#primary-menu > ul > li:hover a, #primary-menu > ul > li.current a {
+    color: #07237d;
+}
+
+#primary-menu ul li a {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 13px;
+    color: #444;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'LatoWeb', sans-serif;
+    -webkit-transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
+    -o-transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
+    transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
+}
+
+#primary-menu.style-3 > ul > li.current > a {
+    color: #FFF;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    background-color: #07237d;
+}
+
+#primary-menu ul ul a {
+    font-size: 12px;
+    font-weight: 600;
+    height: auto !important;
+    line-height: 22px !important;
+    color: #666 !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border: 0 !important;
+    letter-spacing: 0;
+    font-family: 'LatoWeb', sans-serif;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+#primary-menu > ul > li:hover a, 
+#primary-menu > ul > li.current a, 
+#primary-menu > div > ul > li:hover a, 
+#primary-menu > div > ul > li.current a {
+    color: #07237d;
+}
+
+#primary-menu.style-3 > ul > li.current > a, 
+#primary-menu.sub-title > ul > li:hover > a, 
+#primary-menu.sub-title > ul > li.current > a, 
+#primary-menu.sub-title > div > ul > li:hover > a, 
+#primary-menu.sub-title > div > ul > li.current > a {
+    background-color: #07237d;
+}
+
+#primary-menu ul ul li:hover > a {
+    color: #07237d !important;
+}
+
+#primary-menu > ul > li > ul {
+    -webkit-transition: top .4s ease;
+    -o-transition: top .4s ease;
+    transition: top .4s ease;
+}
+
+#primary-menu ul ul li {
+    float: none;
+    margin: 0;
+}
+
+#primary-menu ul ul li:hover > a {
+    background-color: #F9F9F9;
+    padding-left: 18px;
+    color: #07237d !important;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    padding: 10px;
+}
+
+/** 
+BODY
+**/
+#login_body {
+    /*
+    background-image: url(/images/mFactors-Portal-Login-Background_Img.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    */
+}
+
+#login-title {
+    color: #07237d;
+    font-family: 'LatoWeb', sans-serif;
+}
+
+#login_title { 
+    height: 130px;
+    padding-top: 20px;
+}
+
+#login_title > img {
+    display: block;
+    margin: auto;
+}
+
+#login_title > div.login_title {
+    color: #07237d;
+    text-align: center;
+}
+
+#login_title > div.first_line { 
+    margin-top: 10px;
+    height: 19px;
+    font-size: 19px;
+    font-family: 'LatoWeb', sans-serif;
+}
+
+#login_title > div.second_line {
+    margin-top: 10px;
+    height: 30px;
+    font-size: 30px;
+    font-family: 'LatoWebBold', sans-serif;   
+}
+
+/** LOGIN FORM **/
+
+#login_form{
+    width:500px;
+    float:left;
+}
+
+#login_form > div#login_feedback {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+}
+
+#login_form > div#login_feedback > div {
+    text-align: center;
+}
+
+#login_form > form > input[type=text] {
+    margin-bottom: 10px;
+} 
+
+#login_form > form > input[type=text], 
+#login_form > form > input[type=password] {   
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+#login_form > form > input[type=text]::-webkit-input-placeholder,
+#login_form > form > input[type=text]:-moz-placeholder,
+#login_form > form > input[type=text]::-moz-placeholder,
+#login_form > form > input[type=text]:-ms-input-placeholder, 
+#login_form > form > input[type=password]::-webkit-input-placeholder,
+#login_form > form > input[type=password]:-moz-placeholder,
+#login_form > form > input[type=password]::-moz-placeholder,
+#login_form > form > input[type=password]:-ms-input-placeholder {
+    font-size: 18px;
+    color: #999999;
+}
+
+#terms {
+    display: block;
+    font-size: 12px;
+    font-family: 'LatoWeb', sans-serif;
+}
+#terms > input[type=checkbox] {
+    height: 19px;
+    width: 19px;
+    border: 1px solid #aab2bd;
+    background-color: white;
+}
+
+#terms > input[type=checkbox] + label {
+    font-family: 'LatoWeb', sans-serif;
+    vertical-align: top;
+    padding-top: 5px;    
+}
+
+#terms > input[type=checkbox] + label > a {
+    color: black;
+    text-decoration: underline !important; 
+}
+
+#login_form > form > div#login_submit {
+    width: 163px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-family: 'LatoWeb', sans-serif;
+}
+
+/** GROUP INFO 1152 **/
+
+#group_info {
+    position: relative;
+    height: auto;
+    min-height: 75px;
+    overflow: hidden;
+}
+
+#group_info > div.group_info {    
+    float: left;
+}
+
+#group_info > div.group_info > div.group_info_title {
+    color: #07237d;
+    font-family: 'LatoWebSemibold', sans-serif;
+}
+
+#group_info > div#info_3 > div.group_info > div.group_info_title {
+    color: #07237d;
+    font-family: 'LatoWebSemibold', sans-serif;
+}
+
+#group_info > div.group_info > div:not(.group_info_title) {
+    color: #666666;
+    font-family: 'LatoWeb', sans-serif;
+    padding-top: 10px;
+}
+
+#info_1 {
+    width: 380px;
+    float: left;
+}
+
+#info_1 > div#info_1_child {
+    
+}
+
+#info_1 > div#info_1_child > div.indicators {
+    /*
+    background-color: white;
+    padding: 5px 10px;
+    */
+    padding: 5px 0px;
+}
+#info_1 > div#info_1_child > div.indicators > span {
+    font: 11px Arial, Helvetica, sans-serif;
+    padding-right: 20px;
+}
+
+#info_1 > div#info_1_child i.fa-arrow-up {
+    color: green;
+}
+
+#info_1 > div#info_1_child i.fa-arrow-down {
+    color: red;
+}
+
+#info_2 {     
+}
+
+#info_2 > div.group_info_title {
+     text-align: left;
+     padding-left: 50px;
+     color: #07237d; 
+     font-family: 'LatoWebSemibold';    
+}
+
+#info_2 > div#info_2_child {
+    text-align: right;
+    padding-left: 50px;
+}
+#info_2 > div#info_2_child > ul {
+    list-style-type: none;
+}
+
+#info_2 > div#info_2_child > ul > li > a {    
+    color: #666666;
+}
+
+#info_2 group_info_title {
+    color: #07237d;
+    font-family: 'LatoWebSemibold', sans-serif;
+}
+
+#info_3 {   
+}
+
+#info_3 > div.group_info_title {
+    text-align: left;
+}
+
+#info_3 > div#info_3_child {
+    text-align: left;
+}
+
+/*
+    Group info list items
+*/
+div.group_info > div:not(.group_info_title) > ul {
+    list-style-type: none;
+}
+
+div.group_info > div:not(.group_info_title) > ul > li {
+    margin: 5px 0;
+}
+
+div.group_info > div:not(.group_info_title) > ul > li > a { 
+    text-decoration: underline !important;
+    color: #666666 !important;
+    font-family: 'LatoWeb', sans-serif;
+}
+
+/** 
+    FOOTER
+**/
+
+div#footer {
+    width: 100%;
+    position: absolute;
+    background-color: #07237d;
+}
+
+
+div#client_footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #07237d;
+    font-family: "LatoWeb", sans-serif;
+    color: #fff;
+    font-size: 12px;
+    line-height: 2.5;
+    height: 2rem;
+}
+
+div#footer > div.wrapper {
+    margin-top: 10px;
+    color: white;
+    height: auto;
+}
+
+div#footer > div.wrapper > a {
+    color: white; 
+}
+
+div#footer > div#bottom_footer {
+    height: 260px;
+    background-color: #b2bfc6;
+}
+
+div#footer > div#bottom_footer > div.wrapper > div.contacts {
+    float: left;
+    padding-right: 60px;
+    padding-top: 85px;
+    width:374px;
+}
+
+div#footer > div#bottom_footer > div.wrapper > div.contacts > div.contact_details {
+    line-height: 1.5;
+    color: #2b3c4b;
+    font-family: 'LatoWeb', sans-serif;
+    margin-left: 100px;
+    width:374px;
+}
+div#footer > div#bottom_footer > div.wrapper > div.contacts > div.contact_title {
+    margin-left: 100px;
+    width:374px;
+}
+
+div#footer > div#bottom_footer > div.wrapper > div.contacts > div.contact_details > a {
+    color: #2b3c4b;
+}
+
+#thawte_script {
+    padding-left: 30px;
+    padding-top: 10px;
+}
+#thawte_details{
+    padding-left: 10px;
+}
+
+.header_image{
+    float: left;
+    padding-top: 15px;
+    height: 50px;
+    width: 380px;
+    text-align: right;
+}
+
+.div_container{
+    width: 311px; 
+    float: left;
+    height: 50px;
+}
