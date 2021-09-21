@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="sidebar-wrapper ps ps--active-x">
         <div class="logo">
-            <a  href="/"><img src="/images/mfactors_white_logo.png" class="simple-text logo-normal"></a>            
+            <a  href="/"><img src="/images/carers_white_logo.png" class="simple-text logo-normal"></a>            
         </div>
         <ul  id="accordion" class="nav">   
            
