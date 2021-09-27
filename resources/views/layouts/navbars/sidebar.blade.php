@@ -1,10 +1,10 @@
 <div class="sidebar">
     <div class="sidebar-wrapper ps ps--active-x">
         <div class="logo">
-            <a  href="/"><img src="/images/carers_white_logo.png" class="simple-text logo-normal"></a>            
+            <a  href="/"><img src="/images/carers_white_logo.png" class="simple-text logo-normal"></a>
         </div>
-        <ul  id="accordion" class="nav">   
-           
+        <ul  id="accordion" class="nav">
+
             <li class="{{ ($page_slug ?? ' ') == 'schedules' ? 'active' : ''}}">
                 <a href="{{ route('home') }}" aria-expanded="false" aria-controls="balances">
                     <i class="fas fa-balance-scale"></i>
@@ -13,8 +13,8 @@
                     </p>
                 </a>
             </li>
-            
-            
+
+
             <li class="{{ ($category ?? ' ') == 'visits' ? 'active' : ''}}">
                 <a href="{{ route('home') }}" aria-expanded="false" aria-controls="reports">
                     <i class="fas fa-chart-line"></i>
@@ -23,7 +23,7 @@
                     </p>
                 </a>
             </li>
-            
+
             <li class="{{ ($page_slug ?? ' ') == 'clients' ? 'active' : ''}}">
                 <a href="{{ route('home') }}" aria-expanded="false" aria-controls="invoices">
                     <i class="fas fa-receipt"></i>
@@ -32,7 +32,7 @@
                     </p>
                 </a>
             </li>
-            
+
             <li class="{{ ($page_slug ?? ' ') == 'carers' ? 'active' : ''}}">
                 <a href="{{ route('home') }}" aria-expanded="false" aria-controls="credit_notes">
                     <i class="far fa-credit-card"></i>
@@ -41,7 +41,7 @@
                     </p>
                 </a>
             </li>
-            
+
             <li class="{{ ($page_slug ?? ' ') == 'invoices' ? 'active' : ''}}">
                 <a href="{{ route('home') }}" aria-expanded="false" aria-controls="invoices">
                     <i class="fas fa-receipt"></i>
@@ -50,7 +50,7 @@
                     </p>
                 </a>
             </li>
-            
+
             <li class="{{ ($page_slug ?? ' ') == 'payments' ? 'active' : ''}}">
                 <a href="{{ route('home') }}" aria-expanded="false" aria-controls="credit_notes">
                     <i class="far fa-credit-card"></i>
@@ -59,7 +59,34 @@
                     </p>
                 </a>
             </li>
-            
+
+            <li class="{{ ($category ?? ' ') == 'carers' ? 'active' : ''}}">
+                <a data-toggle="collapse" href="#carers" aria-expanded="false" aria-controls="carers">
+                    <i class="fas fa-users"></i>
+                    <p class="sidebar-category">
+                        Carers
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse {{ ($category ?? ' ') == 'carers' ? 'show' : ''}}" id="carers">
+                    <ul class="nav">
+                        <li class="{{ ($page_slug ?? ' ') == 'details' ? 'active' : ''}}">
+                            <a href="{{ route('carers.details') }}" title="Details">
+                                <span class="sidebar-mini-icon">DET</span>
+                                <span class="sidebar-normal">Details</span>
+                            </a>
+                        </li>
+
+                        <li class="{{ ($page_slug ?? ' ') == 'schedules' ? 'active' : ''}}">
+                            <a href="{{ route('home') }}" title="Services">
+                                <span class="sidebar-mini-icon">SCH</span>
+                                <span class="sidebar-normal">Schedules</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
             <li class="{{ ($category ?? ' ') == 'admin' ? 'active' : ''}}">
                 <a data-toggle="collapse" href="#admin" aria-expanded="false" aria-controls="admin">
                     <i class="fas fa-sliders-h"></i>
@@ -69,47 +96,47 @@
                     </p>
                 </a>
                 <div class="collapse {{ ($category ?? ' ') == 'admin' ? 'show' : ''}}" id="admin">
-                    <ul class="nav">  
-                        
-                        <li class="{{ ($page_slug ?? ' ') == 'compliance' ? 'active' : ''}}"> 
+                    <ul class="nav">
+
+                        <li class="{{ ($page_slug ?? ' ') == 'compliance' ? 'active' : ''}}">
                             <a href="{{ route('home') }}" title="Compliance">
                                 <span class="sidebar-mini-icon">Com</span>
                                 <span class="sidebar-normal">Compliance</span>
                             </a>
                         </li>
-                        
+
                         <li class="{{ ($page_slug ?? ' ') == 'services' ? 'active' : ''}}">
                             <a href="{{ route('home') }}" title="Services">
                                 <span class="sidebar-mini-icon">SER</span>
                                 <span class="sidebar-normal">Services</span>
                             </a>
                         </li>
-                        
+
                         <li class="{{ ($page_slug ?? ' ') == 'settings' ? 'active' : ''}}">
                             <a href="{{ route('home') }}" title="Settings">
                                 <span class="sidebar-mini-icon">SER</span>
                                 <span class="sidebar-normal">Settings</span>
-                            </a>                          
-                        </li> 
-                        
+                            </a>
+                        </li>
+
                         <li class="{{ ($page_slug ?? ' ') == 'admin_settings' ? 'active' : ''}}">
                             <a href="{{ route('home') }}" title="Settings">
                                 <span class="sidebar-mini-icon">Set</span>
                                 <span class="sidebar-normal">Settings</span>
-                            </a>                          
-                        </li>   
-                        
+                            </a>
+                        </li>
+
                         <li class="{{ ($page_slug ?? ' ') == 'access' ? 'active' : ''}}">
                             <a href="{{ route('home') }}" title="Users">
                                 <span class="sidebar-mini-icon">Use</span>
                                 <span class="sidebar-normal">Users</span>
-                            </a>                          
+                            </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </li>
-            
+
         </ul>
     </div>
     <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;">
