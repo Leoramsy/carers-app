@@ -31,9 +31,6 @@
 {{-- Global scripts --}}
 <script src="{{ asset('js/main') }}/global.js"></script>
 <!-- Timeout logic -->
-@if(auth()->check() && !Auth::user()->hasRole(\App\Models\MYSQL\Access\Role::SUPER_ADMIN))
-@include('partials.session')
-@endif
 {{-- Add page specific scripts --}}
 @yield('scripts')
 <script src="{{ asset('js/main') }}/post-load.js"></script>

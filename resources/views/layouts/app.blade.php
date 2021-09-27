@@ -7,10 +7,10 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Carers') }}</title>
+        <title>{{ $page_slug ?? config('app.name', 'Carers') }}</title>
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images') }}/favicon.ico">
-        <!-- Fonts -->     
+        <!-- Fonts -->
         <!-- Icons -->
         @include('partials.styles')
     </head>
@@ -18,12 +18,12 @@
         <div class="wrapper">
             @include('layouts.navbars.navbar')
             @include('layouts.navbars.sidebar')
-            <div class="main-panel">                
+            <div class="main-panel">
                 <div class="content">
                     @yield('content')
                     @include('layouts.footer')
-                </div>                        
-            </div>            
+                </div>
+            </div>
             @include('partials.scripts')
             @include('partials/modals')
             @include('flash::message')
@@ -84,6 +84,6 @@
                 });
             </script>
             @stack('js')
-        </div>               
+        </div>
     </body>
 </html>

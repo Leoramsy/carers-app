@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClientsTable extends Migration {
+class CreateCompaniesTable extends Migration {
 
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class CreateClientsTable extends Migration {
     public function up() {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('country_id')->constrained();
             $table->string('name'); //Client Name
             $table->string('postal_address_1');
             $table->string('postal_address_2')->nullable()->default();
@@ -25,6 +26,7 @@ class CreateClientsTable extends Migration {
             $table->string('fax_number'); //Fax Number
             $table->string('email'); //For Customer level detail queries
             $table->string('logo')->nullable()->default(NULL); //For Customer level detail queries
+            $table->boolean('active')->default(TRUE); //For Customer level detail queries
             $table->timestamps();
         });
     }

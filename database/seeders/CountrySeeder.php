@@ -1,10 +1,12 @@
 <?php
 
-use App\Models\System\Country;
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
+Use App\Models\System\Country;
 
-class CountriesSeeder extends Seeder {
-
+class CountrySeeder extends Seeder
+{
     private $countries = [
         ['description' => 'Afghanistan', 'iso_alpha2' => 'AF', 'iso_alpha3' => 'AFG', 'iso_numeric' => '4', 'currency_code' => 'AFN', 'currency_name' => 'Afghani', 'currency_symbol' => '؋', 'flag' => 'AF.png'],
         ['description' => 'Albania', 'iso_alpha2' => 'AL', 'iso_alpha3' => 'ALB', 'iso_numeric' => '8', 'currency_code' => 'ALL', 'currency_name' => 'Lek', 'currency_symbol' => 'Lek', 'flag' => 'AL.png'],
@@ -264,9 +266,7 @@ class CountriesSeeder extends Seeder {
             $country->currency = $countries[$i]['currency_name'];
             $country->currency_code = $countries[$i]['currency_code'];
             $country->currency_indicator = $countries[$i]['currency_symbol'];
-            $country->vat = 0;
             $country->save();
         }
     }
-
 }
