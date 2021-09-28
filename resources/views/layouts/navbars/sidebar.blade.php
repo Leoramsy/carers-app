@@ -25,7 +25,7 @@
             </li>
 
             <li class="{{ ($page_slug ?? ' ') == 'clients' ? 'active' : ''}}">
-                <a href="{{ route('home') }}" aria-expanded="false" aria-controls="invoices">
+                <a href="{{ route('clients') }}" aria-expanded="false" aria-controls="invoices">
                     <i class="fas fa-receipt"></i>
                     <p class="sidebar-category">
                         Clients

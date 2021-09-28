@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         ]);
         // create admin logins
         DB::table('carers')->insert([
-            'first_name' => 'Talent',
+            'name' => 'Talent',
             'surname' => 'Mbedzi',
             'email' => 'talentmbedzi@gmail.com',
             'remember_token' => Str::random(10),
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now()
         ]);
         DB::table('carers')->insert([
-            'first_name' => 'Leo',
+            'name' => 'Leo',
             'surname' => 'Rams',
             'email' => 'leoramsy@gmail.com',
             'remember_token' => Str::random(10),

@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ $page_slug ?? config('app.name', 'Carers') }}</title>
+        <title>{{  config('app.name', 'Carers') }}</title>
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{{ asset('images') }}/favicon.ico">
         <!-- Fonts -->

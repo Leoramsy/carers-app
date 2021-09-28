@@ -16,7 +16,7 @@ class CreateCarersTable extends Migration
         Schema::create('carers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->nullable()->constrained();
-            $table->string('first_name');
+            $table->string('name');
             $table->string('surname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

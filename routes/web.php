@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-    HomeController,
+    HomeController
+};
+use App\Http\Controllers\Clients\{    
     ClientController
 };
 use App\Http\Controllers\Carers\{
@@ -48,7 +50,7 @@ Route::group(['middleware' => 'auth'], function() {
      * Clients Routes
      */
     Route::prefix('clients')->group(function() {
-        Route::get('/', [ClientController::class, 'index'])->name('clients.index');
+        Route::get('/', [ClientController::class, 'view'])->name('clients');
         Route::post('/create', [ClientController::class, 'store'])->name('clients.store');
         Route::put('/update/{id}', [ClientController::class, 'update'])->name('clients.update');
     });

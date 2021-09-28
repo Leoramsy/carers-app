@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Clients;
 
 use DB;
 use App\Http\Controllers\EditorController;
-//use App\Models\Clients\Client;
+use App\Models\Clients\Client;
 use App\Models\System\Gender;
 use Illuminate\Http\Request;
 
@@ -39,13 +39,15 @@ class ClientController extends EditorController
     public function view(Request $request) {
         $user = $request->user();
         $company = $user->company;
-        $filters = getFilters($request);
+        dd($user);
+        //$filters = getFilters($request);
         $class = $this->getPrimaryClass();
-        $clients = selectTwoOptions($class::select('id', DB::raw("CONCAT(name, ' ', surname) AS description"))->where('company_id', $company->id)->orderBy('first_name')->get(), "Select Client");
+        
+        $clients = selectTwoOptions($class::select('id', DB::raw("CONCAT(name, ' ', surname) AS description"))->where('company_id', $company->id)->orderBy('name')->get(), "Select Client");
         $active = [1 => "Yes", 0 => "No"];
         $genders = selectTwoOptions(Gender::select('id', 'description')->orderBy('description')->get(), "Select Gender");
         if ($request->ajax()) {
-            setFilters($request);            
+            //setFilters($request);            
             $client_query = $class::select('clients.*', 'genders.description AS gender')
                     ->join('companies', 'clients.company_id', '=', 'companies.id')
                     ->leftjoin('genders', 'clients.gender_id', '=', 'genders.id')

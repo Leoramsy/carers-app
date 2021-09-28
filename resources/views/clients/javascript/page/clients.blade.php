@@ -42,24 +42,33 @@
             },
             fields: [
                 {
-                    label: "Client Name:",
+                    label: "First Name:",
                     name: "clients.name"
                 }, {
-                    label: "Registered Name:",
-                    name: "clients.registered_name"
+                    label: "Last Name:",
+                    name: "clients.surname"
+                },{
+                    label: "Healh Care Number:",
+                    name: "clients.health_care_number"
                 }, {
-                    label: "Client Code:",
-                    name: "clients.code"
+                    label: "Customer Number:",
+                    name: "clients.customer_number"
                 }, {
-                    label: "VAT Number:",
-                    name: "clients.vat_number"
+                    label: "Access to Home:",
+                    name: "clients.access_to_home"
+                },  {
+                    label: "Door Code:",
+                    name: "clients.door_code"
+                },{
+                    label: "Accomodation Notes:",
+                    name: "clients.accomodation_notes"
                 }, {
-                    label: "Reg Number:",
-                    name: "clients.registration_number"
+                    label: "Private Notes:",
+                    name: "clients.general_notes"
                 }, {
-                    label: "Pastel Code:",
-                    name: "clients.pastel_code"
-                }, {
+                    label: "General Notes:",
+                    name: "clients.general_notes"
+                },{
                     label: "Active:",
                     name: "clients.active",
                     type: "radio",
@@ -69,57 +78,45 @@
                     ],
                     def: 1
                 }, {
-                    label: "Invoice Active:",
-                    name: "clients.invoice_active",
-                    type: "radio",
-                    options: [
-                        {label: "Active", value: 1},
-                        {label: "Inactive", value: 0}
-                    ],
-                    def: 1
-                }, {
-                    label: "Opening Balance:",
-                    name: "clients.opening_balance",
-                    def: 0,
-                    attr: {
-                        'data-inputmask': "'digits': 2"
-                    }
-                }, {
-                    label: "Deposit:",
-                    name: "clients.deposit",
-                    def: 0,
-                    attr: {
-                        'data-inputmask': "'digits': 2"
-                    }
-                }, {
                     label: "Balance Start Date:",
-                    name: "clients.opening_balance_date",
+                    name: "clients.service_start_date",                    
+                    type: "datetime",
+                    format: 'DD/MM/YYYY',
+                    def: function () {
+                        return new Date();
+                    }
+                }, {
+                    label: "Service End Date:",
+                    name: "clients.service_end_date",
                     type: "datetime",
                     format: 'DD/MM/YYYY',
                     def: function () {
                         var now = moment();
-                        return now.startOf('month').format('DD/MM/YYYY');
+                        return now.endOf('year').format('DD/MM/YYYY');
                     }
-                }, {
-                    label: "Payment Terms:",
+                },{
+                    label: "Gender:",
                     name: "clients.gender_id",
                     type: "select2",
                     def: 0
                 }, {
                     label: "Address 1:",
-                    name: "clients.billing_address_1"
+                    name: "clients.address_1"
                 }, {
                     label: "Address 2:",
-                    name: "clients.billing_address_2"
+                    name: "clients.address_2"
                 }, {
-                    label: "Address 3:",
-                    name: "clients.billing_address_3"
+                    label: "City:",
+                    name: "clients.city"
+                }, {
+                    label: "County:",
+                    name: "clients.county"
                 }, {
                     label: "Post Code:",
-                    name: "clients.billing_post_code"
+                    name: "clients.postal_code"
                 }, {
-                    label: "Tel No:",
-                    name: "clients.tel_no",
+                    label: "Tel No 2:",
+                    name: "clients.phone2",
                     type: "mask",
                     mask: "(000) 000 0000",
                     maskOptions: {
@@ -127,7 +124,7 @@
                     }
                 }, {
                     label: "Cell No:",
-                    name: "clients.cell_no",
+                    name: "clients.phone",
                     type: "mask",
                     mask: "(000) 000 0000",
                     maskOptions: {
@@ -141,33 +138,14 @@
                     maskOptions: {
                         placeholder: "(ext) 555 5555"
                     }
-                }, {
-                    label: "Contact:",
-                    name: "clients.contact_person"
-                }, {
-                    label: "Account Contact:",
-                    name: "clients.account_contact_person"
-                }, {
+                },  {
                     label: "Email:",
                     name: "clients.email",
                     attr: {
                         placeholder: "example@company.co.za"
                     }
-                }, {
-                    label: "Account Email:",
-                    name: "clients.account_email",
-                    attr: {
-                        placeholder: "example_1@company.co.za; example_2@company.co.za",
-                        maxlength: 300
-                    }
-                }, {
-                    label: "Account CC Email:",
-                    name: "clients.account_cc_email",
-                    attr: {
-                        placeholder: "example_1@company.co.za; example_2@company.co.za",
-                        maxlength: 300
-                    }
                 }
+                
             ]
         });
         /***** INIT CUSTOMERS TABLE *****/
@@ -186,12 +164,20 @@
             },
             columns: [
                 {data: null, defaultContent: '', orderable: false, sClass: "selector"},
-                {data: "clients.code"},
                 {data: "clients.name"},
-                {data: "clients.registered_name"},
+                {data: "clients.surname"},                
+                {data: "genders.description", editField: "clients.gender_id"},
+                {data: "clients.phone"},
                 {data: null, render: function (data, type, row) {
-                        if (row['clients']['contact_person'] != null) {
-                            return row['clients']['contact_person'];
+                        if (row['clients']['address_1'] != null) {
+                            return row['clients']['address_1'];
+                        } else {
+                            return "N/A";
+                        }
+                    }},
+                {data: null, render: function (data, type, row) {
+                        if (row['clients']['address_2'] != null) {
+                            return row['clients']['address_2'];
                         } else {
                             return "N/A";
                         }
@@ -204,27 +190,12 @@
                         }
                     }},
                 {data: null, render: function (data, type, row) {
-                        if (row['clients']['tel_no'] != null) {
-                            return row['clients']['tel_no'];
+                        if (row['clients']['accomodation_notes'] != null) {
+                            return row['clients']['accomodation_notes'];
                         } else {
                             return "N/A";
                         }
-                    }},
-                {data: null, render: function (data, type, row) {
-                        if (row['clients']['cell_no'] != null) {
-                            return row['clients']['cell_no'];
-                        } else {
-                            return "N/A";
-                        }
-                    }},
-                {data: "genders.description", editField: "clients.gender_id"},
-                {data: null, render: function (data, type, row) {
-                        if (row['clients']['vattable'] == "0") {
-                            return "No";
-                        } else {
-                            return "Yes";
-                        }
-                    }},
+                    }},                                
                 {data: null, render: function (data, type, row) {
                         if (row['clients']['active'] == "0") {
                             return "No";
@@ -235,8 +206,8 @@
             ],
             columnDefs: [
                 {className: "dt-cell-right", targets: []}, //Align table body cells to right
-                {className: "dt-cell-left", targets: [1, 2, 3, 4, 5, 6, 7, 8]}, //Align table body cells to left
-                {className: "dt-cell-center", targets: [0, 9, 10]}, //Align table body cells to center
+                {className: "dt-cell-left", targets: [1, 2, 3, 4, 5, 6, 7, 8, 9]}, //Align table body cells to left
+                {className: "dt-cell-center", targets: []}, //Align table body cells to center
                 {searchable: false, targets: 0}
             ],
             order: [1, 'asc'],
@@ -331,7 +302,7 @@
             }
         }).on('submitComplete', function (e, json, data) {
             tabError('#company-tab', false);
-            tabError('#payment-tab', false);
+            tabError('#gender-tab', false);
             tabError('#contact-tab', false);
             if (json.hasOwnProperty('fieldErrors') && json['fieldErrors'].length > 0) {
                 clients_editor.error("One or more error(s) have occured. Please check the alerted tab icons!");
@@ -340,7 +311,7 @@
             firstTab();
         }).on('close', function (e) {
             tabError('#company-tab', true);
-            tabError('#payment-tab', true);
+            tabError('#gender-tab', true);
             tabError('#contact-tab', true);
             $('.summary_wizard_information > span').empty();
         });
