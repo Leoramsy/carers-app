@@ -1,10 +1,9 @@
 <div class="sidebar">
     <div class="sidebar-wrapper ps ps--active-x">
         <div class="logo">
-            <a  href="/"><img src="/images/carers_white_logo.png" class="simple-text logo-normal"></a>
+            <a  href="/"><img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo4.png" class="simple-text logo-normal"></a>
         </div>
         <ul  id="accordion" class="nav">
-
             <li class="{{ ($page_slug ?? ' ') == 'schedules' ? 'active' : ''}}">
                 <a href="{{ route('home') }}" aria-expanded="false" aria-controls="balances">
                     <i class="fas fa-balance-scale"></i>
@@ -34,56 +33,41 @@
             </li>
 
             <li class="{{ ($page_slug ?? ' ') == 'carers' ? 'active' : ''}}">
-                <a href="{{ route('home') }}" aria-expanded="false" aria-controls="credit_notes">
-                    <i class="far fa-credit-card"></i>
+                <a href="{{ route('carers.details') }}" aria-expanded="false" aria-controls="credit_notes">
+                    <i class="far fa-user"></i>
                     <p class="sidebar-category">
                        Carers
                     </p>
                 </a>
             </li>
 
-            <li class="{{ ($page_slug ?? ' ') == 'invoices' ? 'active' : ''}}">
-                <a href="{{ route('home') }}" aria-expanded="false" aria-controls="invoices">
-                    <i class="fas fa-receipt"></i>
+            <li class="{{ ($category ?? ' ') == 'accounting' ? 'active' : ''}}">
+                <a data-toggle="collapse" href="#accounting" aria-expanded="false" aria-controls="accounting">
+                    <i class="fas fa-credit-card"></i>
                     <p class="sidebar-category">
-                        Invoices
-                    </p>
-                </a>
-            </li>
-
-            <li class="{{ ($page_slug ?? ' ') == 'payments' ? 'active' : ''}}">
-                <a href="{{ route('home') }}" aria-expanded="false" aria-controls="credit_notes">
-                    <i class="far fa-credit-card"></i>
-                    <p class="sidebar-category">
-                       Payments
-                    </p>
-                </a>
-            </li>
-
-            <li class="{{ ($category ?? ' ') == 'carers' ? 'active' : ''}}">
-                <a data-toggle="collapse" href="#carers" aria-expanded="false" aria-controls="carers">
-                    <i class="fas fa-users"></i>
-                    <p class="sidebar-category">
-                        Carers
+                        Accounting
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse {{ ($category ?? ' ') == 'carers' ? 'show' : ''}}" id="carers">
+                <div class="collapse {{ ($category ?? ' ') == 'carers' ? 'show' : ''}}" id="accounting">
                     <ul class="nav">
-                        <li class="{{ ($page_slug ?? ' ') == 'details' ? 'active' : ''}}">
-                            <a href="{{ route('carers.details') }}" title="Details">
-                                <span class="sidebar-mini-icon">DET</span>
-                                <span class="sidebar-normal">Details</span>
+                        <li class="{{ ($page_slug ?? ' ') == 'invoices' ? 'active' : ''}}">
+                            <a href="{{ route('home') }}" aria-expanded="false" aria-controls="invoices">
+                                <i class="fas fa-receipt"></i>
+                                <p class="sidebar-category">
+                                    Invoices
+                                </p>
                             </a>
                         </li>
 
-                        <li class="{{ ($page_slug ?? ' ') == 'schedules' ? 'active' : ''}}">
-                            <a href="{{ route('home') }}" title="Services">
-                                <span class="sidebar-mini-icon">SCH</span>
-                                <span class="sidebar-normal">Schedules</span>
+                        <li class="{{ ($page_slug ?? ' ') == 'payments' ? 'active' : ''}}">
+                            <a href="{{ route('home') }}" aria-expanded="false" aria-controls="credit_notes">
+                                <i class="far fa-credit-card"></i>
+                                <p class="sidebar-category">
+                                    Payments
+                                </p>
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </li>
