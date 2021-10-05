@@ -16,7 +16,7 @@ class DetailController extends EditorController
      */
     public function view()
     {
-        //
+        return view('carers.details.show');
     }
 
 
