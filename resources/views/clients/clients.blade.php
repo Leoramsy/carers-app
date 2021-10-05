@@ -1,4 +1,4 @@
-@extends('layouts.client', ['page' => 'Clients' ,'page_slug' => 'client_details', 'category' => 'clients'])
+@extends('layouts.app', ['page' => 'Clients' ,'page_slug' => 'client_details', 'category' => 'clients'])
 @section('css_files')
 {!! Html::style('css/wizard.css') !!}
 @endsection
@@ -19,8 +19,8 @@
                         {!! Form::select('client', $clients, (!is_null($filters) ? $filters['client_id'] : key($clients)), array('id' => 'client-select', 'class' => 'form-control input-original', 'data-original' => key($clients))) !!}
                     </div> 
                     <div class="col-md-4">
-                        <b>{!! Form::label('genders', 'Terms:', ['class' => 'awesome']) !!}</b>
-                        {!! Form::select('genders', $terms, (!is_null($filters) ? $filters['gender_id'] : key($terms)), array('id' => 'genders-select', 'class' => 'form-control input-original', 'data-original' => key($terms))) !!}
+                        <b>{!! Form::label('genders', 'Gender:', ['class' => 'awesome']) !!}</b>
+                        {!! Form::select('genders', $genders, (!is_null($filters) ? $filters['gender_id'] : key($genders)), array('id' => 'genders-select', 'class' => 'form-control input-original', 'data-original' => key($genders))) !!}
                     </div>  
                     <div class="col-md-4">
                         <b>{!! Form::label('active', 'Active:', ['class' => 'awesome']) !!}</b>
@@ -123,7 +123,7 @@
                                                         <button type="button" class="btn btn-default prev-step">Back</button>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <legend style="text-align: center">Payment Details</legend>
+                                                        <legend style="text-align: center">Clients Notes</legend>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <button type="button" class="btn btn-primary next-step">Next</button>
@@ -146,7 +146,7 @@
                                                         <button type="button" class="btn btn-default prev-step">Back</button>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <legend style="text-align: center">Contact Details</legend>
+                                                        <legend style="text-align: center">Next of Kin Details</legend>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <button type="button" class="btn btn-primary next-step">Next</button>

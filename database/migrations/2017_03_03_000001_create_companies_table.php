@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\System\Company;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -29,6 +30,7 @@ class CreateCompaniesTable extends Migration {
             $table->boolean('active')->default(TRUE); //For Customer level detail queries
             $table->timestamps();
         });
+        
     }
 
     /**

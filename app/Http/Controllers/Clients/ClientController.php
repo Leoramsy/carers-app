@@ -39,11 +39,11 @@ class ClientController extends EditorController
     public function view(Request $request) {
         $user = $request->user();
         $company = $user->company;
-        dd($user);
-        //$filters = getFilters($request);
+        $filters = null; // getFilters($request);
         $class = $this->getPrimaryClass();
         
-        $clients = selectTwoOptions($class::select('id', DB::raw("CONCAT(name, ' ', surname) AS description"))->where('company_id', $company->id)->orderBy('name')->get(), "Select Client");
+        $clients = selectTwoOptions($class::select('id', DB::raw("CONCAT(name, ' ', surname) AS description"))
+                ->where('company_id', $company->id)->orderBy('name')->get(), "Select Client");
         $active = [1 => "Yes", 0 => "No"];
         $genders = selectTwoOptions(Gender::select('id', 'description')->orderBy('description')->get(), "Select Gender");
         if ($request->ajax()) {
@@ -66,7 +66,7 @@ class ClientController extends EditorController
             }
             return response()->json(["data" => $data,]);
         }
-        return view('staff.clients.clients', compact('clients', 'genders', 'active', 'filters'));
+        return view('clients.clients', compact('clients', 'genders', 'active', 'filters'));
     }
     
     /**

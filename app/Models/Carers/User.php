@@ -49,4 +49,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    /**
+     * Get the Company assigned to this user 
+     *
+     * @return COmpany
+     */
+    public function company() {
+        return $this->belongsTo('App\Models\System\Company');
+    }
 }
