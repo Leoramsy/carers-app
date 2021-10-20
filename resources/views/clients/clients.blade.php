@@ -46,7 +46,8 @@
                                 <th class='dt-cell-center'>Active</th>
                             </tr>                           
                         </thead>
-                    </table>                    
+                    </table> 
+                    <!--
                     <div id="clients-editor" class="custom-editor">
                         <div id="client-details">
                             <section>
@@ -285,7 +286,7 @@
                                                         </div>
                                                     </div>
                                                 </fieldset>
-                                                <!-- CONTACT SUMMARY -->
+                                                //<!-- CONTACT SUMMARY 
                                                 <fieldset>
                                                     <div class="row_group">
                                                         <div class="col-md-6">
@@ -370,7 +371,7 @@
                                 </div>
                             </section>                        
                         </div>                            
-                    </div> 
+                    </div> -->  
                 </div>
             </div>
         </div>

@@ -41,18 +41,17 @@ class ClientController extends EditorController
         $company = $user->company;
         $filters = null; // getFilters($request);
         $class = $this->getPrimaryClass();
-        
-        $clients = selectTwoOptions($class::select('id', DB::raw("CONCAT(name, ' ', surname) AS description"))
-                ->where('company_id', $company->id)->orderBy('name')->get(), "Select Client");
+        $clients = selectTwoOptions(Client::select('id', DB::raw("CONCAT(name, ' ', surname) AS description"))
+               // ->where('company_id', $company->id)
+               ->orderBy('name')->get(), "Select Client");
         $active = [1 => "Yes", 0 => "No"];
         $genders = selectTwoOptions(Gender::select('id', 'description')->orderBy('description')->get(), "Select Gender");
         if ($request->ajax()) {
             //setFilters($request);            
-            $client_query = $class::select('clients.*', 'genders.description AS gender')
-                    ->join('companies', 'clients.company_id', '=', 'companies.id')
-                    ->leftjoin('genders', 'clients.gender_id', '=', 'genders.id')
-                    ->where('clients.company_id', $company->id)
-                    ->where('clients.company_id', $request->active_id);
+            $client_query = Client::select('clients.*', 'genders.description AS gender')
+                    //->join('companies', 'clients.company_id', '=', 'companies.id')
+                    ->leftjoin('genders', 'clients.gender_id', '=', 'genders.id');
+                    //->where('clients.company_id', $company->id);
             if ($request->client_id > 0) {
                 $client_query->where('clients.id', $request->client_id);
             }

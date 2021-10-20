@@ -206,7 +206,7 @@
             ],
             columnDefs: [
                 {className: "dt-cell-right", targets: []}, //Align table body cells to right
-                {className: "dt-cell-left", targets: [1, 2, 3, 4, 5, 6, 7, 8, 9]}, //Align table body cells to left
+                {className: "dt-cell-left", targets: [1, 2, 3, 4, 5, 6, 7, 8]}, //Align table body cells to left
                 {className: "dt-cell-center", targets: []}, //Align table body cells to center
                 {searchable: false, targets: 0}
             ],
