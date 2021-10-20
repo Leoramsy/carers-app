@@ -19,11 +19,12 @@ class CreateCarersTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('email')->unique();
+            $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_admin')->default(FALSE);
             $table->boolean('active')->default(TRUE);
-            $table->string('logo')->nullable()->default(NULL);
+            $table->string('image')->nullable()->default(NULL);
             $table->rememberToken();
             $table->timestamps();
         });

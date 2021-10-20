@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Jul 14, 2020, 1:30:58 PM
     Author     : ZakS
 */
@@ -37,7 +37,7 @@ and open the template in the editor.
 
 /*
 SELECT 2
-Used for the 
+Used for the
 */
 #client-div .select2-selection__rendered {
     /* line-height: 31px !important; */
@@ -56,12 +56,12 @@ NAV TABS
 */
 
 /* NEW */
-.main-content .nav-tabs > li.active > a, 
-.main-content .nav-tabs > li.active > a:focus, 
+.main-content .nav-tabs > li.active > a,
+.main-content .nav-tabs > li.active > a:focus,
 .main-content .nav-tabs > li.active > a:hover {
     color: var(--primary);
     cursor: default;
-    background-color: #f5f5f5;
+    background-color: transparent;
     border: 2px solid var(--primary);
     border-bottom: 2px solid #f5f5f5;
     font-weight: bold;
@@ -73,7 +73,7 @@ NAV TABS
     border-bottom: 2px solid var(--primary);
 }
 
-.main-content .nav-tabs > li > a:focus, 
+.main-content .nav-tabs > li > a:focus,
 .main-content .nav-tabs > li > a:hover {
     text-decoration: none;
     background-color: #eee;
@@ -111,8 +111,8 @@ NAV TABS
     background-color: #344675;
 }
 
-.content .btn:disabled, 
-.content .btn[disabled], 
+.content .btn:disabled,
+.content .btn[disabled],
 .content .btn.disabled {
     opacity: 0.5;
     filter: alpha(opacity=50);
@@ -130,21 +130,21 @@ NAV TABS
     border-color: #d6dae2;
 }
 
-.content .btn-group > .btn:hover, 
+.content .btn-group > .btn:hover,
 .content .btn-group-vertical > .btn:hover {
     z-index: 1;
 }
 
-.content .btn:hover, 
-.content .btn:focus, 
-.content .navbar .navbar-nav > a.btn:hover, 
+.content .btn:hover,
+.content .btn:focus,
+.content .navbar .navbar-nav > a.btn:hover,
 .content .navbar .navbar-nav > a.btn:focus {
     opacity: 1;
     filter: alpha(opacity=100);
     outline: 0 !important;
 }
 
-.content .btn:hover, 
+.content .btn:hover,
 .content .btn:focus {
     text-decoration: none;
 }

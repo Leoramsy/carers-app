@@ -14,7 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->loadMigrationsFrom([database_path('migrations') . '/initial']); //New tables //database/migrations
+        $this->loadMigrationsFrom([database_path('migrations') . '/revisions/*']); //Revised database //database/migrations
     }
 
     /**
@@ -30,9 +31,15 @@ class AppServiceProvider extends ServiceProvider
          * Issue with Laravel 5.4 & MySQL versions older than 5.7.7
          */
         Schema::defaultStringLength(191);
-        /*
-         * Let Laravel know about the new folders in the migrations structure!
-         */
-        $this->loadMigrationsFrom('database/migrations/create/*'); //New tables
+
+        view()->composer('layouts.navbars.navbar', function ($view) {
+            $user = auth()->user();
+            $initials = '';
+            $image = NULL;
+            if (!is_null($user)) {
+                $initials = substr($user->name, 0, 1) . substr($user->surname, 0, 1);
+            }
+            $view->with(['initials' => $initials, 'image' => $image]);
+        });
     }
 }

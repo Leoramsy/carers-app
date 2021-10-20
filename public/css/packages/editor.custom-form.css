@@ -22,13 +22,22 @@ and open the template in the editor.
 
 div.custom-editor fieldset {
     flex: 1;
-    border: 1px solid #aaa;
     margin: 0.5em;
     padding: 10px 0px;
 }
 
 div.custom-editor fieldset.half-set {
     flex: 1 1 50%;
+}
+
+div.modal-multi-columns div.DTE_Body div.DTE_Body_Content div.custom-editor fieldset.full-set div.DTE_Field > label.col-lg-4 {
+    max-width: 16.66666667% !important;
+}
+
+div.modal-multi-columns div.DTE_Body div.DTE_Body_Content div.custom-editor fieldset.full-set div.DTE_Field > div.col-lg-8 {
+    width: 83.33333333%;
+    max-width: 83.33333333% !important;
+    flex: 0 0 80% !important;
 }
 
 div.custom-editor fieldset.half-set div.DTE_Field,

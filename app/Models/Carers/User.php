@@ -28,6 +28,7 @@ class User extends Authenticatable
         'name',
         'surname',
         'email',
+        'username',
         'password',
     ];
 
@@ -49,11 +50,59 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     /**
-     * Get the Company assigned to this user 
+     * Get the roles this user belongs to has access to
      *
-     * @return COmpany
+     * @return Role
+     */
+    public function roles() {
+        return $this->belongsToMany('App\Models\Auth\Role', 'carer_roles', 'carer_id', 'role_id')->withTimestamps();
+    }
+
+    /**
+     * Does the user have this role
+     *
+     * @param string $role
+     * @return boolean
+     */
+    public function hasRole($role) {
+        if (is_string($role)) {
+            return $this->roles->contains('slug', $role);
+        }
+        return !!$role->intersection($this->roles)->count();
+    }
+
+    /**
+     * Checks to see if the this user can access this permission
+     *
+     * @param string/array $permission
+     * @return boolean
+     */
+    public function canAccess($permission = null) {
+        return !is_null($permission) && $this->hasPermission($permission);
+    }
+
+    /**
+     * Does the user have this permission
+     *
+     * @param string/array $permission
+     * @return boolean
+     */
+    public function hasPermission($permission) {
+        $roles = $this->roles;
+        foreach ($roles AS $role) {
+            if ($role->hasPermission($permission)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Get the Company assigned to this user
+     *
+     * @return Company
      */
     public function company() {
         return $this->belongsTo('App\Models\System\Company');

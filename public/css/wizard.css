@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : ZakS
 */
 
+#wiz_nav_tab {
+    border-bottom: 1px solid #ddd;
+}
+
 .wizard:not(.editor-wizard) {
     margin: 20px auto;
     background: #fff;
@@ -57,15 +61,18 @@ span.round-tab {
     text-align: center;
     font-size: 25px;
 }
-.wizard li > a:not(.alert-danger) > span.round-tab i{
-    color:#555555;
+
+.wizard li > a:not(.alert-danger) > span.round-tab i {
+    color: #555555;
 }
+
 .wizard li.active span.round-tab {
     background: #fff;
     border: 2px solid #5bc0de;
 
 }
-.wizard li.active span.round-tab i{
+
+.wizard li.active span.round-tab i {
     color: #5bc0de;
 }
 
@@ -76,6 +83,10 @@ span.round-tab:hover {
 
 .wizard .nav-tabs > li {
     width: 25%;
+}
+
+.wizard .nav-tabs > li.active > a {
+    background-color: transparent;
 }
 
 .wizard li:after {
@@ -92,11 +103,11 @@ span.round-tab:hover {
 
 .wizard li.active:after {
     content: " ";
-    position: absolute;
+    position: relative;
     left: 46%;
     opacity: 1;
     margin: 0 auto;
-    bottom: 0px;
+    bottom: 5px;
     border: 10px solid transparent;
     border-bottom-color: #5bc0de;
 }
@@ -139,7 +150,7 @@ fieldset.wizard-navigation .next-step {
     float: left;
 }
 
-@media( max-width : 585px ) {
+@media ( max-width: 585px ) {
 
     .wizard {
         width: 90%;

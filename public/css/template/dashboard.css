@@ -1,8 +1,8 @@
 
 :root {
     /* Two main colors for the application */
-    --primary: #07237d; /* Darker shade */ 
-    --secondary: #5f84c9; /* Lighter shade */ 
+    --primary: #07237d; /* Darker shade */
+    --secondary: #5f84c9; /* Lighter shade */
 
     --blue: #5e72e4;
     --indigo: #5603ad;
@@ -18,7 +18,7 @@
     --gray: #6c757d;
     --gray-dark: #32325d;
     --light: #ced4da;
-    --lighter: #e9ecef;  
+    --lighter: #e9ecef;
     --success: #d4edda;
     --info: #1d8cf8;
     --warning: #ff8d72;
@@ -1050,10 +1050,12 @@ pre code {
     .col-md-1 {
         flex: 0 0 8.333333%;
         max-width: 8.333333%;
+        float: left;
     }
     .col-md-2 {
         flex: 0 0 16.666667%;
         max-width: 16.666667%;
+        float: left;
     }
     .col-md-3 {
         flex: 0 0 25%;
@@ -1068,30 +1070,37 @@ pre code {
     .col-md-5 {
         flex: 0 0 41.666667%;
         max-width: 41.666667%;
+        float: left;
     }
     .col-md-6 {
         flex: 0 0 50%;
         max-width: 50%;
+        float: left;
     }
     .col-md-7 {
         flex: 0 0 58.333333%;
         max-width: 58.333333%;
+        float: left;
     }
     .col-md-8 {
         flex: 0 0 66.666667%;
         max-width: 66.666667%;
+        float: left;
     }
     .col-md-9 {
         flex: 0 0 75%;
         max-width: 75%;
+        float: left;
     }
     .col-md-10 {
         flex: 0 0 83.333333%;
         max-width: 83.333333%;
+        float: left;
     }
     .col-md-11 {
         flex: 0 0 91.666667%;
         max-width: 91.666667%;
+        float: left;
     }
     .col-md-12 {
         flex: 0 0 100%;
@@ -1818,7 +1827,7 @@ pre code {
 
 .form-control {
     display: block;
-    width: 100%;    
+    width: 100%;
     padding: 0.5rem 0.7rem;
     font-size: 0.875rem;
     line-height: 1.428571;
@@ -2228,7 +2237,7 @@ textarea.form-control {
     box-shadow: 0 0 0 0 rgba(255, 141, 114, 0.25);
 }
 
-.form-inline {  
+.form-inline {
     flex-flow: row wrap;
     align-items: center;
 }
@@ -4542,7 +4551,7 @@ input[type="button"].btn-block {
     }
     .navbar-expand-lg>.container,
     .navbar-expand-lg>.container-fluid {
-        flex-wrap: nowrap;        
+        flex-wrap: nowrap;
     }
     .navbar-expand-lg .navbar-collapse {
         display: flex !important;
@@ -5392,7 +5401,7 @@ input[type="button"].btn-block {
     color: #ff643f;
 }
 
-.alert-danger {   
+.alert-danger {
     color: #721c24 !important;;
     background-color: #f8d7da;
     border-color: #f5c6cb;
@@ -5830,7 +5839,7 @@ input[type="button"].btn-block {
     float: right;
     font-size: 1.3125rem;
     font-weight: 600;
-    line-height: 1;    
+    line-height: 1;
     text-shadow: none;
     opacity: .5;
 }
@@ -11069,7 +11078,7 @@ button.section-darker:focus {
     font-size: 1rem;
 }
 
-.alert .close {    
+.alert .close {
     opacity: .9;
     text-shadow: none;
     line-height: 0;
@@ -11237,13 +11246,13 @@ button.section-darker:focus {
     overflow: hidden;
     margin: 4px 1px;
     border-radius: 0.4285rem;
-    cursor: pointer;   
+    cursor: pointer;
     background-image: -webkit-linear-gradient(to bottom left, #344675, #263148, #344675);
     background-image: -o-linear-gradient(to bottom left, #344675, #263148, #344675);
     background-image: -moz-linear-gradient(to bottom left, #344675, #263148, #344675);
     background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
     background-size: 210% 210%;
-    background-position: top right;    
+    background-position: top right;
     transition: all 0.15s ease;
     box-shadow: none;
     color: #ffffff;
@@ -13704,7 +13713,7 @@ fieldset[disabled] .btn-link.active {
     transform: translate3d(0, -2px, 0) !important;
 }
 
-.dropdown-menu.dropdown-navbar {    
+.dropdown-menu.dropdown-navbar {
 }
 
 .dropdown-menu.dropdown-navbar:before,
@@ -14517,9 +14526,9 @@ fieldset[disabled] .form-control {
 
 textarea.form-control {
     max-width: 100%;
-    max-height: 80px;    
-    resize: none;  
-    border: 1px solid #2b3553;    
+    max-height: 80px;
+    resize: none;
+    border: 1px solid #2b3553;
     line-height: 2;
 }
 
@@ -14844,7 +14853,7 @@ textarea.form-control {
     border-bottom: none;
 }
 
-.modal-content .modal-header button {    
+.modal-content .modal-header button {
     right: 27px;
     top: 24px;
     outline: 0;
@@ -15924,7 +15933,7 @@ textarea.form-control {
 }
 
 .navbar {
-    width: 100%;    
+    width: 100%;
     background: #1a1e34;
 }
 
@@ -15955,7 +15964,7 @@ textarea.form-control {
 }
 
 .navbar.navbar-absolute {
-    position: absolute;   
+    position: absolute;
 }
 
 .navbar.navbar-transparent {
@@ -16020,7 +16029,7 @@ textarea.form-control {
     position: relative;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    color: #ffffff;   
+    color: #ffffff;
     font-weight: 600;
     font-size: 1rem;
 }
@@ -16473,7 +16482,7 @@ textarea.form-control {
     .navbar .caret {
         position: absolute;
         left: 90%;
-        top: 65%;        
+        top: 65%;
     }
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 0.5rem;
@@ -18317,7 +18326,7 @@ table.tablesorter thead tr .headerSortDown {
 .sidebar .sidebar-wrapper>.nav [data-toggle="collapse"]~div>ul>li>a .sidebar-mini-icon,
 .sidebar .sidebar-wrapper .user .info [data-toggle="collapse"]~div>ul>li>a .sidebar-mini-icon,
 .off-canvas-sidebar .sidebar-wrapper>.nav [data-toggle="collapse"]~div>ul>li>a .sidebar-mini-icon,
-.off-canvas-sidebar .sidebar-wrapper .user .info [data-toggle="collapse"]~div>ul>li>a .sidebar-mini-icon {    
+.off-canvas-sidebar .sidebar-wrapper .user .info [data-toggle="collapse"]~div>ul>li>a .sidebar-mini-icon {
     width: 34px;
     margin-right: 10px;
     margin-left: 0px;
@@ -18379,7 +18388,7 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .sidebar .nav,
-.off-canvas-sidebar .nav {    
+.off-canvas-sidebar .nav {
     display: block;
 }
 
@@ -18484,7 +18493,7 @@ table.tablesorter thead tr .headerSortDown {
 .sidebar .nav li.active>a[data-toggle="collapse"]+div .nav .active a .sidebar-normal,
 .off-canvas-sidebar .nav li.active>a[data-toggle="collapse"]+div .nav .active a .sidebar-mini-icon,
 .off-canvas-sidebar .nav li.active>a[data-toggle="collapse"]+div .nav .active a .sidebar-normal {
-    color: #ffffff;    
+    color: #ffffff;
 }
 
 .sidebar .nav li.active>a[data-toggle="collapse"]+div .nav .active a:before,
@@ -19345,7 +19354,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     border-left: 4px solid transparent;
     margin-top: -5px;
     position: absolute;
-    top: 30px;    
+    top: 30px;
 }
 
 .pull-left {
@@ -25053,9 +25062,6 @@ div.dt-autofill-list div.dt-autofill-question input[type=number] {
     margin: -2px 0;
 }
 
-div.dataTables_info {
-    color: rgba(255, 255, 255, 0.7);
-}
 
 @keyframes dtb-spinner {
     100% {
@@ -28675,7 +28681,7 @@ Copyright (c) 2015 Daniel Eden
     width: 80px;
     height: 40px;
     float: left;
-    margin-right: 10px;    
+    margin-right: 10px;
     border-radius: 4px;
 }
 
@@ -28696,14 +28702,14 @@ Copyright (c) 2015 Daniel Eden
     line-height: 10px;
     font-size:12px;
     background-color: var(--primary);
-    border-color: var(--primary);    
+    border-color: var(--primary);
     margin-top: 5px;
     padding: 2px 4px;
 }
 
 .informative > .infoBubble > .infoNumber {
     line-height: 10px;
-    background-color: #eb3f35;    
+    background-color: #eb3f35;
     width: auto;
     padding: 3px;
     color: #fff;
@@ -28756,9 +28762,9 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .avatar-circle {
-    width: 40px;
-    height: 40px;
-    background-color:  var(--primary);;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--primary);
     text-align: center;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -28770,7 +28776,7 @@ Copyright (c) 2015 Daniel Eden
     top: 10px;
     font-size: 14px;
     line-height: 14px;
-    color: #fff;  
+    color: #fff;
     font-weight: bold;
 }
 
@@ -28835,7 +28841,7 @@ Copyright (c) 2015 Daniel Eden
     padding: 6px 12px;
     margin-bottom: 0;
     font-size: 14px;
-    font-weight: 400;    
+    font-weight: 400;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -28848,7 +28854,7 @@ Copyright (c) 2015 Daniel Eden
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 4px;    
+    border-radius: 4px;
     margin-top: 10px;
 }
 
@@ -28859,12 +28865,12 @@ Copyright (c) 2015 Daniel Eden
     color: white;
 }
 
-.popover {    
-    color: #337ab7;    
+.popover {
+    color: #337ab7;
 }
 
 .popover-body {
-    color: #337ab7;    
+    color: #337ab7;
 }
 
 .version-info{
@@ -28879,7 +28885,7 @@ Copyright (c) 2015 Daniel Eden
 .moveall,
 .removeall {
     color: white !important;
-    margin: 10px 0px  !important;    
+    margin: 10px 0px  !important;
 }
 
 option.selected-client {

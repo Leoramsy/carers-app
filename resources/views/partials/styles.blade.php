@@ -23,6 +23,7 @@
 {!! Html::style('css/packages/carers.datatables.buttons.css?v='. config('app.css_version')) !!}
 {!!  Html::style('css/packages/editor.modal.css?v='. config('app.css_version')) !!}
 {!! Html::style('css/packages/editor.multi-columns.css?v='. config('app.css_version')) !!}
+{!! Html::style('css/packages/editor.custom-form.css?v='. config('app.css_version')) !!}
 <!-- carers: Global general -->
 {!! Html::style('fonts/Lato/latofonts.css?v='. config('app.css_version')) !!}
 {!! Html::style('css/main.css?v='. config('app.css_version')) !!}
