@@ -13,10 +13,16 @@
             },
             columns: [
                 {data: null, defaultContent: '', orderable: false, sClass: 'selector'},
-                {data: 'carers.first_name'},
+                {data: 'carers.name'},
                 {data: 'carers.surname'},
                 {data: 'carers.email'},
-                {data: 'carers.active'},
+                {data: null, render: function (data, type, row) {
+                        if (row['carers']['active'] == "0") {
+                            return "Inactive";
+                        } else {
+                            return "Active";
+                        }
+                    }},
                 {data: 'carers.image'}
             ],
             columnDefs: [
@@ -120,8 +126,21 @@
                         break;
                 }
             }
+        }).on('submitComplete', function (e, json, data) {
+            tabError('#details-tab', false);
+            tabError('#access-tab', false);
+            tabError('#address-tab', false);
+            if (json.hasOwnProperty('fieldErrors') && json['fieldErrors'].length > 0) {
+                carers_editor.error("One or more error(s) have occured. Please check the alerted tab icons!");
+            }
+        }).on('open', function (e) {
+            firstTab();
+        }).on('close', function (e) {
+            tabError('#details-tab', true);
+            tabError('#access-tab', true);
+            tabError('#address-tab', true);
+            $('.summary_wizard_information > span').empty();
         });
-
         $(carers_editor.displayNode()).addClass('modal-multi-columns');
 
     });

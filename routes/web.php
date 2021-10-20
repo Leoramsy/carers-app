@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     HomeController
 };
-use App\Http\Controllers\Clients\{    
+use App\Http\Controllers\Clients\{
     ClientController
 };
 use App\Http\Controllers\Carers\{
@@ -43,6 +43,10 @@ Route::group(['middleware' => 'auth'], function() {
             Route::post('/create', [DetailController::class, 'store'])->name('carers.details.store');
             Route::put('/{id}/update', [DetailController::class, 'update'])->name('carers.details.update');
             Route::delete('/{id}/remove', [DetailController::class, 'destroy'])->name('carers.details.destroy');
+
+            Route::post('/upload', [DetailController::class, 'upload'])->name('carers.details.upload'); // image upload
+
+            // image
         });
     });
 

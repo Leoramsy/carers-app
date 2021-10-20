@@ -26,7 +26,7 @@
     text-align: right;
 }
 
-.select2-container {    
+.select2-container {
 
 }
 
@@ -74,9 +74,9 @@ div.DTE > div.DTE_Header h3 {
     margin-bottom: 0px;
 }
 
-div.DTE > div.DTE_Body label {    
+div.DTE > div.DTE_Body label {
     font-size: 14px;
-    /* padding-left: 0px; */
+    text-align: right;
 }
 
 div.DTE > div.DTE_Body label > div.DTE_Label_Info {
@@ -129,7 +129,7 @@ div.DTE_Field_Type_radio {
 }
 
 
-div.DTE_Field_Type_checkbox div.controls, 
+div.DTE_Field_Type_checkbox div.controls,
 div.DTE_Field_Type_radio div.controls {
     margin-top: 0.4em;
 }
@@ -167,7 +167,7 @@ div.DTE_Field.DTE_Field_Type_title:hover {
 }
 
 /*
-    FIELD 
+    FIELD
 */
 
 .DTE_Field div.help-block {
@@ -176,7 +176,7 @@ div.DTE_Field.DTE_Field_Type_title:hover {
 }
 
 .highcharts-figure, .highcharts-data-table table {
-    min-width: 310px; 
+    min-width: 310px;
     max-width: 800px;
     margin: 1em auto;
 }
@@ -248,7 +248,7 @@ div.DTE_Field.DTE_Field_Type_title:hover {
     color: #fff;
     background: none;
     background-color: #eb3f35;
-    border: 1px solid #fff;    
+    border: 1px solid #fff;
     outline: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -306,14 +306,14 @@ table.dataTable thead.break-none th {
 
 .pagination{margin:0px;}
 .pagination>.disabled>a {
-    opacity: .5; 
+    opacity: .5;
 }
 
 
 .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover{
     color: #4c4147;
     background-color: #fff;
-    border-color: #cabeb2    
+    border-color: #cabeb2
 }
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
     border: 1px solid #cabeb2;
@@ -362,13 +362,13 @@ button.dt-button:focus:not(.disabled), div.dt-button:focus:not(.disabled), a.dt-
     border:none;
 }
 
-button.dt-button:active:not(.disabled), 
-button.dt-button.active:not(.disabled), 
-div.dt-button:active:not(.disabled), 
-div.dt-button.active:not(.disabled), 
-a.dt-button:active:not(.disabled), 
+button.dt-button:active:not(.disabled),
+button.dt-button.active:not(.disabled),
+div.dt-button:active:not(.disabled),
+div.dt-button.active:not(.disabled),
+a.dt-button:active:not(.disabled),
 a.dt-button.active:not(.disabled){
-    background-image: none;    
+    background-image: none;
     color:#fff;
     border:none;
 }
@@ -396,13 +396,13 @@ a.dt-button.active:not(.disabled){
 
 #ui-datepicker-div .ui-state-default {
     border: none;
-    background: none; 
+    background: none;
     font-weight: normal;
     color: #fff;
 }
 
 .ui-datepicker-today{
-    background-color: #eb3f35; 
+    background-color: #eb3f35;
 }
 
 .ui-datepicker .ui-datepicker-calendar td:hover{
@@ -477,10 +477,19 @@ a.dt-button.active:not(.disabled){
     color: #c77405;
 }
 
+.fa-check-circle {
+    background-color: #fff !important;
+    color: var(--primary) !important;
+}
+
+.custom-editor {
+    width: 100%;
+}
+
 /**Editor Inputs**/
 
 div.DTE_Field input, div.DTE_Field textarea{
-    display: inline-block;    
+    display: inline-block;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
@@ -495,6 +504,7 @@ div.DTE_Field input, div.DTE_Field textarea{
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     outline-color:#786e74;
+    width: -webkit-fill-available;
 }
 
 /** Tables **/
@@ -504,9 +514,9 @@ div.DTE_Field input, div.DTE_Field textarea{
     color: #fff;
 }
 
-#content table.dataTable tr td:first-child { 
-    text-align: center; 
-} 
+#content table.dataTable tr td:first-child {
+    text-align: center;
+}
 
 #content table.dataTable thead tr th.headerLeft {
     text-align: left;
@@ -536,10 +546,10 @@ div.DTE_Field input, div.DTE_Field textarea{
 }
 
 /* Added dt-body-center - allows for the table inside a table to not render a tick box */
-#content table.dataTable tr td.dt-body-center:first-child:before 
-{ 
-    font-family: FontAwesome; 
-    content: "\f096"; /* fa-square-o */ 
+#content table.dataTable tr td.dt-body-center:first-child:before
+{
+    font-family: FontAwesome;
+    content: "\f096"; /* fa-square-o */
 }
 
 #content div.innerTableContainer {
@@ -569,22 +579,22 @@ div.DTE_Field input, div.DTE_Field textarea{
 }
 
 #content table.dataTable tr table .ingCostDown:before {
-    font-family: FontAwesome; 
-    content: "\F0D7"; /* fa-caret-right */ 
+    font-family: FontAwesome;
+    content: "\F0D7"; /* fa-caret-right */
     font-size: x-large;
     color: red;
 }
 
 #content table.dataTable tr table .ingCostUp:before {
-    font-family: FontAwesome; 
-    content: "\F0D8"; /* fa-caret-right */ 
+    font-family: FontAwesome;
+    content: "\F0D8"; /* fa-caret-right */
     font-size: x-large;
     color: chartreuse;
 }
 
 #content table.dataTable tr td.arrowRightCollapse:before {
-    font-family: FontAwesome; 
-    content: "\f0da"; /* fa-caret-right */ 
+    font-family: FontAwesome;
+    content: "\f0da"; /* fa-caret-right */
     font-size: medium;
 }
 
@@ -592,20 +602,20 @@ div.DTE_Field input, div.DTE_Field textarea{
     font-size: large;
 }
 
-#content table.dataTable tr.selected td.dt-body-center:first-child:before 
-{ 
-    font-family: FontAwesome; 
-    content: "\f046"; /* fa-check-square-o */ 
+#content table.dataTable tr.selected td.dt-body-center:first-child:before
+{
+    font-family: FontAwesome;
+    content: "\f046"; /* fa-check-square-o */
 }
 
-#content table.dataTable tr td.dataTables_empty:first-child:before 
-{ 
-    content: ""; 
+#content table.dataTable tr td.dataTables_empty:first-child:before
+{
+    content: "";
 }
 
 /* EXPAND (Was used for old recipe method (table inside a table)) */
 #content td.details-control:last-child {
-    text-align: center; 
+    text-align: center;
 }
 
 #content td.details-control:last-child:before {
@@ -620,7 +630,7 @@ div.DTE_Field input, div.DTE_Field textarea{
 /**   **/
 
 .DTE_Field_Input select
-{   
+{
     min-width: 50px;
     font-size: 12px;
     border-radius: 0;
@@ -666,11 +676,11 @@ div.DTE_Form_Info{
     text-transform: uppercase;
 }
 
-#content table.dataTable > thead > tr > th:first-child {    
+#content table.dataTable > thead > tr > th:first-child {
     width: 4%;
 }
 
-#content table.dataTable > tbody > tr > td:first-child {    
+#content table.dataTable > tbody > tr > td:first-child {
     width: 4%;
 }
 
@@ -702,7 +712,7 @@ div.DTE_Form_Info{
 
 /* ODD */
 #content table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
-    background-color: #f8f6f4;  
+    background-color: #f8f6f4;
 }
 
 /* EVEN */
@@ -722,10 +732,10 @@ table.dataTable.stripe tbody tr.even, table.dataTable.display tbody tr.even {
     color: #4c4147;
 }
 
-#allProducts .dataTables_wrapper .dataTables_filter, 
+#allProducts .dataTables_wrapper .dataTables_filter,
 #ioProducts .dataTables_wrapper .dataTables_filter,
 #productArchives .dataTables_wrapper .dataTables_filter,
-#tabs-A1 .dataTables_wrapper .dataTables_filter, 
+#tabs-A1 .dataTables_wrapper .dataTables_filter,
 #tabs-A2 .dataTables_wrapper .dataTables_filter,
 #tabs-A3 .dataTables_wrapper .dataTables_filter {
     margin-bottom: 10px;
@@ -915,7 +925,7 @@ li.li_error {
 ** Datatable popup styling
 */
 
-div.DTED_Lightbox_Wrapper div.DTED_Lightbox_Container div.DTED_Lightbox_Content_Wrapper div.DTED_Lightbox_Content div.DTE {    
+div.DTED_Lightbox_Wrapper div.DTED_Lightbox_Container div.DTED_Lightbox_Content_Wrapper div.DTED_Lightbox_Content div.DTE {
     border-radius: 0px;
     box-shadow: none;
     border: none;
@@ -957,14 +967,14 @@ div.DTED_Lightbox_Wrapper div.DTED_Lightbox_Container div.DTED_Lightbox_Content_
     box-shadow: none;
     border-radius: 0px;
     top:12px;
-    right:15px;  
+    right:15px;
 }
 
-div.DTED_Lightbox_Wrapper div.DTED_Lightbox_Container div.DTED_Lightbox_Content_Wrapper div.DTED_Lightbox_Content div.DTED_Lightbox_Close:hover {    
+div.DTED_Lightbox_Wrapper div.DTED_Lightbox_Container div.DTED_Lightbox_Content_Wrapper div.DTED_Lightbox_Content div.DTED_Lightbox_Close:hover {
     box-shadow: none;
 }
 
-div.DTED_Lightbox_Wrapper div.DTED_Lightbox_Container div.DTED_Lightbox_Content_Wrapper div.DTED_Lightbox_Content div.DTED_Lightbox_Close:after {   
+div.DTED_Lightbox_Wrapper div.DTED_Lightbox_Container div.DTED_Lightbox_Content_Wrapper div.DTED_Lightbox_Content div.DTED_Lightbox_Close:after {
     color: #fff;
     font-weight: normal;
     font-size: 18px;
@@ -978,8 +988,8 @@ table.dataTable tr td.arrowExpand {
 }
 
 table.dataTable tr td.arrowExpand:before {
-    font-family: FontAwesome; 
-    content: "\f149"; /* fa-level-down */ 
+    font-family: FontAwesome;
+    content: "\f149"; /* fa-level-down */
     font-size: medium;
 }
 
@@ -988,8 +998,8 @@ table.dataTable tr td.arrowCollapse {
 }
 
 table.dataTable tr td.arrowCollapse:before {
-    font-family: FontAwesome; 
-    content: "\f148"; /* fa-level-up */ 
+    font-family: FontAwesome;
+    content: "\f148"; /* fa-level-up */
     font-size: medium;
 }
 
@@ -1024,7 +1034,7 @@ div.DTE_Field_InputControl > input:-moz-read-only {
 }
 
 div:not(.DTE) .select2-container {
-    width: 100% !important; 
+    width: 100% !important;
 }
 
 .select2-container ul {
@@ -1034,13 +1044,13 @@ div:not(.DTE) .select2-container {
 /*
 Filter by
 DTE_Field_cylinders[]-id
-if using another multi selection 
+if using another multi selection
 */
 ul.select2-selection__rendered {
-    overflow-y: scroll !important; 
+    overflow-y: scroll !important;
 }
 
-li.select2-selection__choice {    
+li.select2-selection__choice {
     text-align: center;
 }
 

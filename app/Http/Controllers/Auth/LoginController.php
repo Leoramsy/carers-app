@@ -83,9 +83,17 @@ class LoginController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function login(Request $request) {
-        $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
+        $this->validate($request, ['login' => 'required', 'password' => 'required']);
 
-        if (Auth::guard('carer')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+        $login_type = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL )
+            ? 'email'
+            : 'username';
+
+        $request->merge([
+            $login_type => $request->input('login')
+        ]);
+
+        if (Auth::guard('carer')->attempt([$login_type => $request->login, 'password' => $request->password], $request->remember)) {
             $user = Auth::guard('carer')->user();
             // Check if $user and OU are active or not
             if (!$user->active) {
