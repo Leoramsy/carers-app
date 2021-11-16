@@ -35,7 +35,7 @@ class ClientController extends EditorController
      * Show the view for this controller
      * 
      * @return \Illuminate\Http\Response
-     */
+     
     public function view(Request $request) {
         $user = $request->user();
         $company = $user->company;
@@ -65,8 +65,13 @@ class ClientController extends EditorController
             }
             return response()->json(["data" => $data,]);
         }
-        return view('clients.clients', compact('clients', 'genders', 'active', 'filters'));
+        return view('clients.show', compact('clients', 'genders', 'active', 'filters'));
+    } */
+    public function view()
+    {
+        return view('clients.show');
     }
+
     
     /**
      * Return a list of resource.
@@ -139,6 +144,7 @@ class ClientController extends EditorController
                 "gender_id" => $client->gender_id,
                 "name" => $client->name,
                 "surname" => $client->surname,
+                "email" => $client->email,
                 "phone" => $client->phone,
                 "phone_2" => $client->phone_2,                
                 "address_1" => $client->address_1,
@@ -146,6 +152,7 @@ class ClientController extends EditorController
                 "city" => $client->city,
                 "county" => $client->county,                
                 "postal_code" => $client->postal_code,
+                "image" => $client->image,
                 "general_notes" => $client->general_notes,
                 "private_notes" => $client->private_notes,
                 "accomodation_notes" => $client->accomodation_notes,                

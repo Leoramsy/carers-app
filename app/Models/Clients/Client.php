@@ -20,7 +20,7 @@ class Client extends Model
      * @var array
      */
     protected $fillable = ['company_id', 'health_care_number', 'customer_number', 'gender_id', 'name', 'surname',
-        'phone', 'phone_2', 'address_1', 'address_2', 'city', 'county', 'postal_code', 'email',
+        'phone', 'phone_2', 'address_1', 'address_2', 'city', 'county', 'postal_code', 'email','image',
         'general_notes', 'private_notes', 'accomodation_notes', 'access_to_home', 'door_code', 
         'service_start_date', 'service_end_date', 'email', 'active'
         ];

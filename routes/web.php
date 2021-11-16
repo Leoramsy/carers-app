@@ -11,17 +11,16 @@ use App\Http\Controllers\Carers\{
     DetailController
 };
 
-
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register web routes for your application. These
+  | routes are loaded by the RouteServiceProvider within a group which
+  | contains the "web" middleware group. Now create something great!
+  |
+ */
 
 Auth::routes();
 
@@ -45,7 +44,6 @@ Route::group(['middleware' => 'auth'], function() {
             Route::delete('/{id}/remove', [DetailController::class, 'destroy'])->name('carers.details.destroy');
 
             Route::post('/upload', [DetailController::class, 'upload'])->name('carers.details.upload'); // image upload
-
             // image
         });
     });
@@ -54,8 +52,14 @@ Route::group(['middleware' => 'auth'], function() {
      * Clients Routes
      */
     Route::prefix('clients')->group(function() {
-        Route::get('/', [ClientController::class, 'view'])->name('clients');
-        Route::post('/create', [ClientController::class, 'store'])->name('clients.store');
-        Route::put('/update/{id}', [ClientController::class, 'update'])->name('clients.update');
+            Route::get('/', [ClientController::class, 'view'])->name('clients');
+            Route::get('/index', [ClientController::class, 'index'])->name('clients.index');
+            Route::post('/create', [ClientController::class, 'store'])->name('clients.store');
+            Route::put('/update/{id}', [ClientController::class, 'update'])->name('clients.update');
+            Route::delete('/{id}/remove', [ClientController::class, 'destroy'])->name('clients.destroy');
+
+            Route::post('/upload', [ClientController::class, 'upload'])->name('clients.upload'); // image upload
+       
     });
+    
 });
