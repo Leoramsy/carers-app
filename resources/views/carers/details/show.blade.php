@@ -21,8 +21,9 @@
                                 <th class='dt-cell-left'>Name</th>
                                 <th class='dt-cell-left'>Surname</th>
                                 <th class='dt-cell-left'>Email</th>
+                                <th class='dt-cell-left'>Username</th>
+                                <th class='dt-cell-left'>Address</th>
                                 <th class='dt-cell-center'>Active</th>
-                                <th class='dt-cell-center'>Image</th>
                             </tr>
                             </thead>
                         </table>
@@ -108,10 +109,12 @@
                                                             <editor-field name="carers.active"></editor-field>
                                                             <editor-field name="carer_details.phone_number"></editor-field>
                                                         </div>
+                                                        <!--
                                                         <div class="col-md-12">
                                                             <editor-field
                                                                 name="carers.image"></editor-field>
                                                         </div>
+                                                        -->
                                                     </fieldset>
                                                 </div>
                                                 <div id="access-tab" class="tab-pane" role="tabpanel">

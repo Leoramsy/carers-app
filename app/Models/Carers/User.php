@@ -107,4 +107,13 @@ class User extends Authenticatable
     public function company() {
         return $this->belongsTo('App\Models\System\Company');
     }
+
+    /**
+     * Get the Detail for this user
+     *
+     * @return Detail
+     */
+    public function detail() {
+        return $this->hasOne(Detail::class, 'carer_id', 'id');
+    }
 }
