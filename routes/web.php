@@ -64,6 +64,18 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     /*
+     * Carers Routes
+     */
+    Route::prefix('schedules')->group(function () {
+        Route::get('/', [ScheduleController::class, 'view'])->name('schedules');
+        Route::get('/index', [ScheduleController::class, 'index'])->name('schedules.index');
+        Route::get('/visits', [ScheduleController::class, 'visits'])->name('schedules.visits');
+        Route::put('/view/{id}', [ScheduleController::class, 'show'])->name('schedules.view');
+        //Route::delete('/{id}/remove', [ScheduleController::class, 'destroy'])->name('carers.details.destroy');
+
+    });
+
+    /*
      * Clients Routes
      */
     Route::prefix('clients')->group(function() {
