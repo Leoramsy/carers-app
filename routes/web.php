@@ -10,6 +10,9 @@ use App\Http\Controllers\Clients\{
 use App\Http\Controllers\Carers\{
     DetailController
 };
+use App\Http\Controllers\Schedules\{
+    ScheduleController
+};
 
 /*
   |--------------------------------------------------------------------------
@@ -24,7 +27,7 @@ use App\Http\Controllers\Carers\{
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::match(['get', 'post'], '/', function () {
         return view('home');
     });
@@ -35,8 +38,8 @@ Route::group(['middleware' => 'auth'], function() {
     /*
      * Carers Routes
      */
-    Route::prefix('carers')->group(function() {
-        Route::prefix('details')->group(function() {
+    Route::prefix('carers')->group(function () {
+        Route::prefix('details')->group(function () {
             Route::get('/', [DetailController::class, 'view'])->name('carers.details');
             Route::get('/index', [DetailController::class, 'index'])->name('carers.details.index');
             Route::post('/create', [DetailController::class, 'store'])->name('carers.details.store');
@@ -46,6 +49,18 @@ Route::group(['middleware' => 'auth'], function() {
             Route::post('/upload', [DetailController::class, 'upload'])->name('carers.details.upload'); // image upload
             // image
         });
+    });
+
+    /*
+     * Carers Routes
+     */
+    Route::prefix('schedules')->group(function () {
+        Route::get('/', [ScheduleController::class, 'view'])->name('schedules');
+        Route::get('/index', [ScheduleController::class, 'index'])->name('schedules.index');
+        Route::get('/visits', [ScheduleController::class, 'visits'])->name('schedules.visits');
+        Route::put('/view/{id}', [ScheduleController::class, 'show'])->name('schedules.view');
+        //Route::delete('/{id}/remove', [ScheduleController::class, 'destroy'])->name('carers.details.destroy');
+
     });
 
     /*

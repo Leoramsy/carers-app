@@ -5,7 +5,7 @@
         </div>
         <ul  id="accordion" class="nav">
             <li class="{{ ($page_slug ?? ' ') == 'schedules' ? 'active' : ''}}">
-                <a href="{{ route('home') }}" aria-expanded="false" aria-controls="balances">
+                <a href="{{ route('schedules') }}" aria-expanded="false" aria-controls="schedules">
                     <i class="fas fa-balance-scale"></i>
                     <p class="sidebar-category">
                       Schedules

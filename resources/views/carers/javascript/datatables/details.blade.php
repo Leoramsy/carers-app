@@ -16,18 +16,20 @@
                 {data: 'carers.name'},
                 {data: 'carers.surname'},
                 {data: 'carers.email'},
+                {data: 'carers.username'},
+                {data: 'carer_details.address'},
                 {data: null, render: function (data, type, row) {
                         if (row['carers']['active'] == "0") {
                             return "Inactive";
                         } else {
                             return "Active";
                         }
-                    }},
-                {data: 'carers.image'}
+                    }}
+
             ],
             columnDefs: [
-                {className: 'dt-cell-left', targets: [1, 2, 3]}, //Align table body cells to left
-                {className: 'dt-cell-center', targets: [0, 4, 5]}, //Align table body cells to center
+                {className: 'dt-cell-left', targets: [1, 2, 3, 4, 5]}, //Align table body cells to left
+                {className: 'dt-cell-center', targets: [0, 6]}, //Align table body cells to center
                 {searchable: false, targets: 0}
             ],
             order: [1, 'asc'],
@@ -64,6 +66,11 @@
             }, {
                 extend: 'edit', text: 'Edit', className: 'dt-btn', attr: {title: 'Edit the data'},
                 action: function () {
+                    let carer_roles = [];
+                    let role_array = carers_table.row({selected: true}).data()['carer_roles[]'];
+                    for (var i = 0; i < role_array.length; i++) {
+                        carer_roles.push(role_array[i]['role_id']);
+                    }
                     carers_editor.edit(carers_table.row({selected: true}).indexes(), {
                         title: '<h3>Edit: Carer</h3>',
                         buttons: [
@@ -81,6 +88,7 @@
                             }
                         ]
                     });
+                    carers_editor.field('carer_roles[].role_id').inst().select2().val(carer_roles).trigger("change");
                 }
             }, {
                 extend: 'remove',
@@ -116,10 +124,10 @@
                 var info = json['data'][key];
                 switch (action) {
                     case 'create':
-                        flash_message('Carer ' + info['carers']['first_name'] + ' ' + info['carers']['surname'] + ' has been successfully added', 'success');
+                        flash_message('Carer ' + info['carers']['name'] + ' ' + info['carers']['surname'] + ' has been successfully added', 'success');
                         break;
                     case 'edit':
-                        flash_message('Carer ' + info['carers']['first_name'] + ' ' + info['carers']['surname'] + ' has been successfully updated', 'success');
+                        flash_message('Carer ' + info['carers']['name'] + ' ' + info['carers']['surname'] + ' has been successfully updated', 'success');
                         break;
                     case 'remove':
                         flash_message('Carer record has been successfully removed', 'success');

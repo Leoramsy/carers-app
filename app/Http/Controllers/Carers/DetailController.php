@@ -48,6 +48,7 @@ class DetailController extends EditorController
      */
     public function store(Request $request)
     {
+        $user = $request->user();
         $now = Carbon::now();
         DB::beginTransaction();
         try {
@@ -66,6 +67,7 @@ class DetailController extends EditorController
                 return response()->json(['fieldErrors' => $this->getFieldErrors()]);
             }
             $object->fill($data);
+            $object->company_id = $user->company_id;
             $object->password = bcrypt($data['password']);
             if (!$object->save()) {
                 $this->setError('Failed to create the entry');
@@ -78,8 +80,8 @@ class DetailController extends EditorController
             $carer_details->date_of_birth = (is_null($this->data["carer_details"]["date_of_birth"]) ? NULL : Carbon::parse($this->data["carer_details"]["date_of_birth"]));
             $carer_details->start_date = (is_null($this->data["carer_details"]["start_date"]) ? NULL : Carbon::parse($this->data["carer_details"]["start_date"]));
             $carer_details->end_date = (is_null($this->data["carer_details"]["end_date"]) ? NULL : Carbon::parse($this->data["carer_details"]["end_date"]));
-            if (!$carer_details->save()){
-                throw new Exception("failed to create Carer Detals");
+            if (!$carer_details->save()) {
+                throw new Exception("failed to create Carer Details");
             }
             ($this->hasErrors() ? DB::rollback() : DB::commit());
             return response()->json($this->output($this->getRows($request, $object->id)));
@@ -126,7 +128,12 @@ class DetailController extends EditorController
             if (isset($data["password_confirmation"]) && strlen($data["password_confirmation"]) > 0) {
                 $this->setIncludedFields(['carers.password_confirmation' => $data["password_confirmation"]]);
             }
-            if (!$this->isValid($request)) {
+            // Deal with the details
+            $details = $this->data["carer_details"];
+            foreach ($details as $key => $detail) {
+                $this->setIncludedFields(['carer_details.' . $key => $detail]);
+            }
+            if (!$this->isValid()) {
                 return response()->json(['fieldErrors' => $this->getFieldErrors()]);
             }
             if (isset($data["first_name"])) {
@@ -138,8 +145,11 @@ class DetailController extends EditorController
             if (isset($data["email"])) {
                 $object->email = $data["email"];
             }
-            if (isset($data["enabled"])) {
-                $object->enabled = $data["enabled"];
+            if (isset($data["username"])) {
+                $object->username = $data["username"];
+            }
+            if (isset($data["active"])) {
+                $object->active = $data["active"];
             }
             if (isset($data["password"])) {
                 $object->password = bcrypt($data['password']);
@@ -151,10 +161,21 @@ class DetailController extends EditorController
             if (isset($this->data["carer_roles-many-count"])) {
                 $role_ids = ($this->data["carer_roles-many-count"] > 0 ? array_pluck($this->data["carer_roles"], 'role_id') : []);
                 $object->roles()->sync($role_ids, ['created_at' => $object->updated_at, 'updated_at' => $object->updated_at]);
-                $admin_roles = Role::whereIn('slug', [Role::SUPER_ADMIN, Role::ADMIN])->get();
-                if (count(array_intersect($role_ids, $admin_roles->pluck('id')->all()))) {
-                    $object->generateToken();
-                }
+            }
+            // Update related details
+            $carer_details = $object->detail;
+            $carer_details->fill($this->data["carer_details"]);
+            if (isset($this->data["carer_details"]["date_of_birth"])) {
+                $carer_details->date_of_birth = (is_null($this->data["carer_details"]["date_of_birth"]) ? NULL : Carbon::parse($this->data["carer_details"]["date_of_birth"]));
+            }
+            if (isset($this->data["carer_details"]["start_date"])) {
+                $carer_details->start_date = (is_null($this->data["carer_details"]["start_date"]) ? NULL : Carbon::parse($this->data["carer_details"]["start_date"]));
+            }
+            if (isset($this->data["carer_details"]["end_date"])) {
+                $carer_details->end_date = (is_null($this->data["carer_details"]["end_date"]) ? NULL : Carbon::parse($this->data["carer_details"]["end_date"]));
+            }
+            if (!$carer_details->save()) {
+                throw new Exception("failed to create Carer Details");
             }
             DB::commit();
             return response()->json($this->output($this->getRows($request, $object->id)));
@@ -176,15 +197,13 @@ class DetailController extends EditorController
         try {
             $class = $this->getPrimaryClass();
             $object = $class::findOrFail($entry_id);
-            if ($object->batches()->count() > 0) {
-                throw new Exception("This carer has one or more active Report Batches and cannot be deleted");
-            }
-            if ($object->emailBatches()->count() > 0) {
-                throw new Exception("This carer has one or more active Report Batches and cannot be deleted");
-            }
             $this->object = $object;
             $object->roles()->detach();
-            $object->clients()->detach();
+            // find related details
+            $carer_details = $object->detail;
+            if (!$carer_details->delete()) {
+                throw new Exception("Failed to remove carer details");
+            }
             if (!$object->delete()) {
                 throw new Exception("Failed to remove carer");
             }
@@ -312,11 +331,14 @@ class DetailController extends EditorController
             $roles = Role::select('id', 'title AS description')->whereNotIn('slug', [Role::SUPER_ADMIN])->orderBy('title')->get();
         }
         $object = $this->getPrimaryClass();
-        $data_array = ['carers.id','carers.name', 'carers.surname', 'carers.email', 'carers.active', 'carers.image'];
+        $data_array = ['carers.id', 'carers.name', 'carers.surname', 'carers.username', 'carers.email', 'carers.active', 'carers.image', 'carer_details.gender_id', 'carer_details.health_care_number', 'carer_details.employee_number',
+            'carer_details.phone_number', 'carer_details.address_1', 'carer_details.address_2', 'carer_details.address_3', 'carer_details.county', 'carer_details.post_code', 'carer_details.next_of_kin',
+            'carer_details.next_of_kin_phone', 'carer_details.next_of_kin_relationship', 'carer_details.date_of_birth', 'carer_details.start_date', 'carer_details.end_date'];
         $query = $object::select($data_array)
+            ->join('carer_details', 'carers.id', '=', 'carer_details.carer_id')
             ->join('carer_roles', 'carers.id', '=', 'carer_roles.carer_id')
             ->whereIn('carer_roles.role_id', $roles->pluck('id')->all())
-            //->where('carers.company_id', $user->company_id)
+            ->where('carers.company_id', $user->company_id)
             ->groupBy($data_array);
         if ($id > 0) {
             return $query->where('carers.id', $id)->first();
@@ -335,7 +357,25 @@ class DetailController extends EditorController
                 "surname" => $entry->surname,
                 "email" => $entry->email,
                 "active" => $entry->active,
-                "image" => $entry->image,
+                "username" => $entry->username,
+            ],
+            "carer_details" => [
+                'gender_id' => $entry->gender_id,
+                'health_care_number' => $entry->health_care_number,
+                'employee_number' => $entry->employee_number,
+                'phone_number' => $entry->phone_number,
+                'address_1' => $entry->address_1,
+                'address_2' => $entry->address_2,
+                'address_3' => $entry->address_3,
+                'county' => $entry->county,
+                'post_code' => $entry->post_code,
+                'address' => $entry->address_1 . ' ' . $entry->address_2 . ' ' . $entry->address_3 . ' ' . $entry->county . ' ' . $entry->post_code,
+                'next_of_kin' => $entry->next_of_kin,
+                'next_of_kin_phone' => $entry->next_of_kin_phone,
+                'next_of_kin_relationship' => $entry->next_of_kin_relationship,
+                'date_of_birth' => (is_null($entry->date_of_birth) ? NULL : Carbon::parse($entry->date_of_birth)->format('d/m/Y')),
+                'start_date' => (is_null($entry->start_date) ? NULL : Carbon::parse($entry->start_date)->format('d/m/Y')),
+                'end_date' => (is_null($entry->end_date) ? NULL : Carbon::parse($entry->end_date)->format('d/m/Y')),
             ],
             "carer_roles[]" => $role_ids,
         ];
@@ -349,6 +389,7 @@ class DetailController extends EditorController
     {
         $this->messages = [
             'carers.email.unique' => 'The email has already been taken by a registered Carer',
+            'carers.email.email' => 'This email is not valid',
             'carers.username.unique' => 'The username has already been taken by a registered Carer',
             'carers.password.confirmed' => 'The password doesn\'t match the confirmation password',
             'carers.password.regex' => 'The password must contain at least 1 upper, 1 lower, 1 numeric and 1 special character (@!$#%)',
@@ -371,7 +412,6 @@ class DetailController extends EditorController
     {
         $role_list = createValidateList(Role::all());
         $this->rules = [
-            'carers.company_id' => 'required|integer|exists:companies,id',
             'carers.name' => 'required|string|min:3',
             'carers.surname' => 'required|string|min:3',
             'carer_details.phone_number' => 'required|string|min:5',
